@@ -1,7 +1,13 @@
 # Dotfiles
-## Installation
-```console
-$ git clone https://github.com/drakota/dotfiles.git ~/.dotfiles
 
-$ ln -s ~/.dotfiles/.tmux.conf ~/.tmux.conf
+## Installation
+### Clone the repository
+```console
+$ git clone https://github.com/drakota/dotfiles.git ~/dotfiles
+```
+
+### Run the installation script
+```console
+$ cd ~/dotfiles
+$ ./install.sh
 ```
