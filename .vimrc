@@ -1,3 +1,6 @@
+"Set tab size
+set tabstop=4
+
 "Enable line numbers
 set number
 

@@ -11,3 +11,9 @@ $ git clone https://github.com/drakota/dotfiles.git ~/dotfiles
 $ cd ~/dotfiles
 $ ./install.sh
 ```
+
+### Run the installation script and install tools
+```console
+$ cd ~/dotfiles
+$ ./install.sh --with-tools
+```
