@@ -10,4 +10,5 @@ wget "https://github.com/projectdiscovery/subfinder/releases/download/v${TOOL_VE
 echo "[*] Unpacking $TOOL_NAME..."
 tar -xzvf $TOOL_ARCHIVE_PATH -C /tmp 
 mv /tmp/$TOOL_NAME $INSTALL_PATH
+
 echo "[+] $TOOL_NAME successfully installed"
