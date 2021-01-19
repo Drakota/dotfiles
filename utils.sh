@@ -11,3 +11,12 @@ check_python_install() {
         exit 1
     fi
 }
+
+
+setup_tool() {
+    echo "[*] Installing $TOOL_NAME"
+    ($1)
+    ($2)
+    ($3)
+    echo "[+] $TOOL_NAME successfully installed"
+}

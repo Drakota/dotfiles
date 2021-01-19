@@ -1,13 +1,19 @@
 #!/bin/bash
-source ../utils.sh
+DIR="$(dirname "$0")"
+source $DIR/../utils.sh
 
 TOOL_NAME="pwntools"
-echo "[*] Installing $TOOL_NAME"
-
 PYTHON3_PATH=$(which python3)
 PIP3_VERSION=$($PYTHON3_PATH -m pip --version 2>&1)
-check_python_install
 
-$PYTHON3_PATH -m pip install pwntools 
+preinstall_hook() {
+    check_python_install
+}
 
-echo "[+] $TOOL_NAME successfully installed"
+install_hook() {
+    $PYTHON3_PATH -m pip install pwntools 
+}
+
+postinstall_hook() { :; }
+
+setup_tool preinstall_hook install_hook postinstall_hook

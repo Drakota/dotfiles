@@ -1,14 +1,22 @@
 #!/bin/bash
+DIR="$(dirname "$0")"
+source $DIR/../utils.sh
 
 TOOL_NAME="subfinder"
 TOOL_VERSION="2.4.5"
 TOOL_ARCHIVE_PATH="/tmp/$TOOL_NAME.tar.gz"
 INSTALL_PATH=$HOME/.local/bin
-echo "[*] Installing $TOOL_NAME"
+SUBFINDER_URL="https://github.com/projectdiscovery/subfinder/releases/download/v${TOOL_VERSION}/subfinder_${TOOL_VERSION}_linux_amd64.tar.gz"
 
-wget "https://github.com/projectdiscovery/subfinder/releases/download/v${TOOL_VERSION}/subfinder_${TOOL_VERSION}_linux_amd64.tar.gz" -O $TOOL_ARCHIVE_PATH 
-echo "[*] Unpacking $TOOL_NAME..."
-tar -xzvf $TOOL_ARCHIVE_PATH -C /tmp 
-mv /tmp/$TOOL_NAME $INSTALL_PATH
+preinstall_hook() { :; }
 
-echo "[+] $TOOL_NAME successfully installed"
+install_hook() {
+	wget $SUBFINDER_URL -O $TOOL_ARCHIVE_PATH 
+    echo "[*] Unpacking $TOOL_NAME..."
+    tar -xzvf $TOOL_ARCHIVE_PATH -C /tmp 
+    mv /tmp/$TOOL_NAME $INSTALL_PATH
+}
+
+postinstall_hook() { :; }
+
+setup_tool preinstall_hook install_hook postinstall_hook
