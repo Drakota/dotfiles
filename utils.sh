@@ -12,6 +12,12 @@ check_python_install() {
     fi
 }
 
+check_debian_based() {
+    if ! grep -iEq "ubuntu|debian|kali|mint" /etc/issue; then
+        echo "[-] Not Debian based, skipping $TOOL_NAME..."
+        exit 1
+    fi
+}
 
 setup_tool() {
     echo "[*] Installing $TOOL_NAME"
