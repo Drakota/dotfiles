@@ -5,7 +5,7 @@ check_python_install() {
         echo "[-] Python3 not installed, skipping $TOOL_NAME..."
         exit 1
     fi
-
+    
     if [[ $PIP3_VERSION =~ "No module" ]]; then
         echo "[-] Pip not installed, skipping $TOOL_NAME..."
         exit 1
@@ -15,6 +15,13 @@ check_python_install() {
 check_debian_based() {
     if ! grep -iEq "ubuntu|debian|kali|mint" /etc/issue; then
         echo "[-] Not Debian based, skipping $TOOL_NAME..."
+        exit 1
+    fi
+}
+
+skip_if_folder_exists() {
+    if [ -d $1 ]; then
+        echo "[-] Folder already exists at $1, skipping $TOOL_NAME..."
         exit 1
     fi
 }
