@@ -1,5 +1,8 @@
 #!/bin/bash
 
+PYTHON3_PATH=$(which python3)
+PIP3_VERSION=$($PYTHON3_PATH -m pip --version 2>&1)
+
 check_python_install() {
     if [ -z "${PYTHON3_PATH}" ]; then
         echo "[-] Python3 not installed, skipping $TOOL_NAME..."
