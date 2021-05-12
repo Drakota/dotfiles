@@ -21,3 +21,6 @@ autocmd InsertLeave * set iminsert=0
 
 " Disable bell sounds
 set belloff=all
+
+" Show command while it's being typed
+set showcmd
