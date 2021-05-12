@@ -24,3 +24,11 @@ set belloff=all
 
 " Show command while it's being typed
 set showcmd
+
+" Save undo history to a directory
+if !isdirectory($HOME."/.vim/undofiles")
+    call mkdir($HOME."/.vim/undofiles", "p", 0700)
+endif
+set undodir=~/.vim/undofiles
+set undofile
+set undolevels=10000
