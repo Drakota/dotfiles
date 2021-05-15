@@ -32,3 +32,9 @@ endif
 set undodir=~/.vim/undofiles
 set undofile
 set undolevels=10000
+
+" Wrap long lines
+set wrap
+
+" Set background to see text when using Visual mode
+set background=dark
