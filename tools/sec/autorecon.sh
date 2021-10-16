@@ -1,15 +1,15 @@
 #!/bin/bash
 DIR="$(dirname "$0")"
-source $DIR/../utils.sh
+source $DIR/../../utils.sh
 
-TOOL_NAME="pwntools"
+TOOL_NAME="autorecon"
 
 preinstall_hook() {
     check_python_install
 }
 
 install_hook() {
-    $PYTHON3_PATH -m pip install pwntools 
+    $PYTHON3_PATH -m pip install git+https://github.com/Tib3rius/AutoRecon.git 
 }
 
 postinstall_hook() { :; }

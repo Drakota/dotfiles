@@ -1,6 +1,6 @@
 #!/bin/bash
 DIR="$(dirname "$0")"
-source $DIR/../utils.sh
+source $DIR/../../utils.sh
 
 TOOL_NAME="logic2"
 LOGIC2_APPIMAGE_URL="https://downloads.saleae.com/logic2/Logic-2.3.27-master.AppImage"

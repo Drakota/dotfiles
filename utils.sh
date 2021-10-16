@@ -29,6 +29,13 @@ skip_if_folder_exists() {
     fi
 }
 
+check_if_configuration_exists() {
+    if grep -Fxq "$1" $2; then
+        echo "[-] Already added configuration line in $2, skipping..."
+        exit 1
+    fi
+}
+
 setup_tool() {
     echo "[*] Installing $TOOL_NAME"
     ($1)

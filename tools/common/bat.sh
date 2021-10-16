@@ -1,6 +1,6 @@
 #!/bin/bash
 DIR="$(dirname "$0")"
-source $DIR/../utils.sh
+source $DIR/../../utils.sh
 
 TOOL_NAME="bat"
 BAT_DEB_URL="https://github.com/sharkdp/bat/releases/download/v0.18.0/bat-musl_0.18.0_amd64.deb"

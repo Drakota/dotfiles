@@ -1,6 +1,6 @@
 #!/bin/bash
 DIR="$(dirname "$0")"
-source $DIR/../utils.sh
+source $DIR/../../utils.sh
 
 TOOL_NAME="subfinder"
 TOOL_VERSION="2.4.5"

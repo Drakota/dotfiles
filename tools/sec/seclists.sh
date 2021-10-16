@@ -1,6 +1,6 @@
 #!/bin/bash
 DIR="$(dirname "$0")"
-source $DIR/../utils.sh
+source $DIR/../../utils.sh
 
 TOOL_NAME="seclists"
 SECLISTS_ARCHIVE_URL="https://github.com/danielmiessler/SecLists/archive/master.zip"

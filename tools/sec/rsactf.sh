@@ -1,6 +1,6 @@
 #!/bin/bash
 DIR="$(dirname "$0")"
-source $DIR/../utils.sh
+source $DIR/../../utils.sh
 
 TOOL_NAME="rsactf"
 RSACTF_GIT_URL="https://github.com/Ganapati/RsaCtfTool.git"
