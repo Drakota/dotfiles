@@ -13,7 +13,7 @@ fi
 
 for filepath in $DIR/.* $DIR/*; do
     filename=$(basename $filepath)
-    if [[ ! $filename =~ ^(.git|tools|README.md|install.sh|utils.sh|.|..)$ ]]; then
+    if [[ ! $filename =~ ^(.git|.vscode|tools|README.md|install.sh|utils.sh|.|..)$ ]]; then
         ln -sfn $DIR/$filename $HOME/$filename
         echo "[*] Symlinked $filename to $HOME/$filename"
     fi

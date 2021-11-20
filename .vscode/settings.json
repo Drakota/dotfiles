@@ -1,0 +1,111 @@
+{
+    "editor.suggestSelection": "first",
+    "workbench.activityBar.visible": false,
+    "workbench.list.automaticKeyboardNavigation": false,
+    "workbench.editor.showTabs": false,
+    "workbench.editor.limit.enabled": true,
+    "workbench.editor.limit.value": 1,
+    "workbench.editor.limit.perEditorGroup": true,
+    "workbench.colorTheme": "GitHub Dark Default",
+    "workbench.productIconTheme": "fluent-icons",
+    "workbench.iconTheme": "eq-material-theme-icons-light",
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.colorCustomizations": {
+        "scrollbar.shadow": "#ffffff00"
+    },
+    "window.menuBarVisibility": "toggle",
+    "zenMode.fullScreen": false,
+    "editor.fontLigatures": true,
+    "editor.smoothScrolling": true,
+    "editor.wordWrap": "on",
+    "editor.formatOnSave": true,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.fontFamily": "'Cascadia Code', Consolas, 'Courier New', monospace",
+    "editor.hover.above": false,
+    "editor.inlineSuggest.enabled": true,
+    "terminal.integrated.tabs.enabled": false,
+    "terminal.integrated.inheritEnv": false,
+    "settingsSync.ignoredExtensions": [
+        "shakram02.bash-beautify",
+        "dart-code.dart-code",
+        "dart-code.flutter",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-toolsai.jupyter",
+        "github.remotehub",
+        "slevesque.shader",
+        "bradlc.vscode-tailwindcss",
+        "ms-dotnettools.csharp",
+        "mtxr.sqltools",
+        "dtsvet.vscode-wasm",
+        "juanblanco.solidity"
+    ],
+    "vscode-neovim.useWSL": true,
+    "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
+    "vscode-neovim.textDecorationsAtTop": true,
+    "whichkey.bindingOverrides": [
+        {
+            "keys": "l",
+            "name": "+LSP",
+            "type": "bindings",
+            "position": 10,
+            "bindings": [
+                {
+                    "key": "d",
+                    "name": "Go to definition",
+                    "type": "command",
+                    "command": "editor.action.revealDefinition"
+                },
+                {
+                    "key": "D",
+                    "name": "Go to declaration",
+                    "type": "command",
+                    "command": "editor.action.revealDeclaration"
+                },
+                {
+                    "key": "t",
+                    "name": "Go to type definition",
+                    "type": "command",
+                    "command": "editor.action.goToTypeDefinition"
+                },
+                {
+                    "key": "i",
+                    "name": "Go to implementations",
+                    "type": "command",
+                    "command": "editor.action.goToImplementation"
+                },
+                {
+                    "key": "r",
+                    "name": "Go to references",
+                    "type": "command",
+                    "command": "editor.action.goToReferences"
+                }
+            ]
+        },
+        {
+            "keys": "t",
+            "name": "+Tasks",
+            "type": "bindings",
+            "bindings": [
+                {
+                    "key": "b",
+                    "name": "Run build task",
+                    "type": "command",
+                    "command": "workbench.action.tasks.build"
+                },
+                {
+                    "key": "t",
+                    "name": "Run task",
+                    "type": "command",
+                    "command": "workbench.action.tasks.runTask"
+                },
+                {
+                    "key": "c",
+                    "name": "Close task",
+                    "type": "command",
+                    "command": "workbench.action.tasks.terminate"
+                },
+            ]
+        }
+    ]
+}
