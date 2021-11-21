@@ -1,6 +1,10 @@
 " Set tab size
 set tabstop=4
 
+" Set spaces
+set shiftwidth=4
+set expandtab
+
 " Enable line numbers
 set number
 

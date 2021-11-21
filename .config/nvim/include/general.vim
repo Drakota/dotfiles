@@ -3,11 +3,16 @@ set clipboard=unnamedplus
 
 " Clipbord sync with Windows through WSL
 if has('clipboard') || exists('g:vscode')
-    let s:clip = 'clip.exe'
-    if executable(s:clip)
-        augroup WSLYank
-            autocmd!
-            autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
-        augroup END
-    endif
+    let g:clipboard = {
+        \   'name': 'wslclipboard',
+        \   'copy': {
+        \       '+': 'win32yank.exe -i --crlf',
+        \       '*': 'win32yank.exe -i --crlf',
+        \   },
+        \   'paste': {
+        \       '+': 'win32yank.exe -o --lf',
+        \       '*': 'win32yank.exe -o --lf',
+        \   },
+        \   'cache_enabled': 1,
+    \ }
 endif
