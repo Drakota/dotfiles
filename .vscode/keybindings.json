@@ -14,9 +14,13 @@
     "command": "workbench.action.toggleAuxiliaryBar"
   },
   {
+    "key": "ctrl+shift+\\",
+    "command": "workbench.action.focusAuxiliaryBar"
+  },
+  {
     "key": "space",
     "command": "whichkey.show",
-    "when": "editorTextFocus && vim.mode != 'Insert' || !inputFocus"
+    "when": "editorTextFocus && vim.mode != 'Insert' && vim.mode != 'CommandlineInProgress' && vim.mode != 'SearchInProgressMode' && vim.mode != 'EasyMotionInputMode' || !inputFocus"
   },
   {
     "key": "ctrl+k",

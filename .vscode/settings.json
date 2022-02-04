@@ -16,6 +16,7 @@
   "window.menuBarVisibility": "toggle",
   "zenMode.fullScreen": false,
   "editor.fontLigatures": true,
+  "editor.minimap.enabled": false,
   "editor.smoothScrolling": true,
   "editor.wordWrap": "on",
   "editor.formatOnSave": true,
