@@ -11,9 +11,12 @@
   "workbench.iconTheme": "eq-material-theme-icons-light",
   "workbench.startupEditor": "newUntitledFile",
   "workbench.colorCustomizations": {
+    "editorInlayHint.background": "#00000000",
+    "editorInlayHint.foreground": "#808080",
     "scrollbar.shadow": "#ffffff00"
   },
   "window.menuBarVisibility": "toggle",
+  "window.confirmBeforeClose": "keyboardOnly",
   "zenMode.fullScreen": false,
   "editor.fontLigatures": true,
   "editor.minimap.enabled": false,
@@ -26,6 +29,9 @@
   "editor.inlineSuggest.enabled": true,
   "terminal.integrated.inheritEnv": false,
   "terminal.integrated.tabs.enabled": false,
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.shellIntegration.enabled": true,
+  "terminal.integrated.shellIntegration.showWelcome": false,
   "settingsSync.ignoredExtensions": [
     "shakram02.bash-beautify",
     "dart-code.dart-code",
