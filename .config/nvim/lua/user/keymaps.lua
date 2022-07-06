@@ -5,6 +5,7 @@ local function keymap(mode, lhs, rhs, opts)
 end
 
 -- Normal keymaps
+keymap("n", "s", ":HopWord<CR>")
 
 -- Window navigation
 keymap("n", "<C-h>", "<C-w>h")

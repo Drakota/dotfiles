@@ -48,15 +48,24 @@ return packer.startup(function(use)
   use "nvim-telescope/telescope.nvim"
   use "nvim-lualine/lualine.nvim"
   use "kyazdani42/nvim-tree.lua"
+  use "phaazon/hop.nvim"
+
+  require("hop").setup({
+    keys = "etovxqpdygfblzhckisuran"
+  })
+
   require("lualine").setup({
     options = {
       theme = 'auto',
       disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
     }
   })
+
   require("nvim-tree").setup({
-    view = {
-      auto_resize = true
+    actions = {
+      open_file = {
+        resize_window = true
+      }
     }
   })
 
