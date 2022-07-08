@@ -29,6 +29,9 @@ keymap("n", "<C-p>", ":Telescope find_files<CR>")
 
 -- Visual keymaps
 
+-- Terminal keymaps
+keymap("t", "<Esc>", "<C-\\><C-n>")
+
 -- Continue indenting
 keymap("v", "<", "<gv")
 keymap("v", ">", ">gv")

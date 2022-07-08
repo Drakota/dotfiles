@@ -3,7 +3,7 @@ vim.opt.tabstop = 2
 
 -- Set spaces
 vim.opt.expandtab = true
-vim.opt.shiftwidth = 2 
+vim.opt.shiftwidth = 2
 
 -- Enable line numbers
 vim.opt.number = true

@@ -1,3 +1,8 @@
 require "user.options"
 require "user.keymaps"
 require "user.plugins"
+require "user.colorscheme"
+require "user.bufferline"
+require "user.hop"
+require "user.lualine"
+require "user.nvim-tree"
