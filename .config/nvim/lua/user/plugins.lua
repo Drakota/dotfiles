@@ -50,6 +50,9 @@ return packer.startup(function(use)
   use "kyazdani42/nvim-tree.lua"
   use "phaazon/hop.nvim"
 
+  local nvim_tree_events = require('nvim-tree.events')
+  local bufferline_state = require('bufferline.state')
+
   require("hop").setup({
     keys = "etovxqpdygfblzhckisuran"
   })
@@ -68,6 +71,18 @@ return packer.startup(function(use)
       }
     }
   })
+
+  require("bufferline").setup({
+    closable = false
+  })
+
+  nvim_tree_events.on_tree_open(function ()
+    bufferline_state.set_offset(31, "File Tree")
+  end)
+
+  nvim_tree_events.on_tree_close(function ()
+    bufferline_state.set_offset(0)
+  end)
 
   vim.cmd [[colorscheme nightfly]]
   if PACKER_BOOTSTRAP then
