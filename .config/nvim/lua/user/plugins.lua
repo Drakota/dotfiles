@@ -1,5 +1,9 @@
 local fn = vim.fn
 
+local function not_vscode()
+  return not vim.g.vscode
+end
+
 -- Automatically install packer
 local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
@@ -39,17 +43,42 @@ packer.init {
 }
 
 return packer.startup(function(use)
-  use "wbthomason/packer.nvim"
-  use "nvim-lua/popup.nvim"
-  use "nvim-lua/plenary.nvim"
-  use "bluz71/vim-nightfly-guicolors"
-  use "kyazdani42/nvim-web-devicons"
-  use "romgrk/barbar.nvim"
-  use "nvim-telescope/telescope.nvim"
-  use "nvim-lualine/lualine.nvim"
-  use "kyazdani42/nvim-tree.lua"
-  use "phaazon/hop.nvim"
-  use "vim-scripts/ReplaceWithRegister"
+  use { "ifplusor/packer.nvim", opt = false, branch = "fix-sequencing" }
+
+  use { "nvim-lua/popup.nvim", opt = true, cond = { not_vscode } }
+  use { "nvim-lua/plenary.nvim", opt = true, cond = { not_vscode } }
+  use { "bluz71/vim-nightfly-guicolors" }
+  use { "kyazdani42/nvim-web-devicons", opt = true, cond = { not_vscode } }
+  use {
+    "romgrk/barbar.nvim",
+    opt = true,
+    cond = { not_vscode },
+    after = "nvim-web-devicons",
+    config = function()
+      require("user.bufferline")
+    end
+  }
+  use { "nvim-telescope/telescope.nvim", opt = true, cond = { not_vscode } }
+  use {
+    "nvim-lualine/lualine.nvim",
+    opt = true,
+    cond = { not_vscode },
+    after = "nvim-web-devicons",
+    config = function()
+      require("user.lualine")
+    end
+  }
+  use {
+    "kyazdani42/nvim-tree.lua",
+    opt = true,
+    cond = { not_vscode },
+    after = "nvim-web-devicons",
+    config = function()
+      require("user.nvim-tree")
+    end
+  }
+  use { "phaazon/hop.nvim", config = function() require("user.hop") end }
+  use { "vim-scripts/ReplaceWithRegister" }
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()

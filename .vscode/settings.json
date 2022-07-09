@@ -17,7 +17,7 @@
   },
   "window.menuBarVisibility": "toggle",
   "window.confirmBeforeClose": "keyboardOnly",
-  "window.experimental.commandCenter": true,
+  "window.commandCenter": true,
   "zenMode.fullScreen": false,
   "editor.fontLigatures": true,
   "editor.minimap.enabled": false,
@@ -49,25 +49,8 @@
     "dtsvet.vscode-wasm",
     "juanblanco.solidity"
   ],
-  "vim.useSystemClipboard": true,
-  "vim.easymotion": true,
-  "vim.replaceWithRegister": true,
-  "vim.handleKeys": {
-    "<C-f>": false,
-    "<C-t>": false
-  },
-  "vim.normalModeKeyBindingsNonRecursive": [
-    {
-      "before": [
-        "s"
-      ],
-      "after": [
-        "<leader>",
-        "<leader>",
-        "/"
-      ]
-    }
-  ],
+  "vscode-neovim.useWSL": true,
+  "vscode-neovim.neovimExecutablePaths.linux": "nvim",
   "whichkey.bindingOverrides": [
     {
       "keys": "r.r",
