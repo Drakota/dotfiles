@@ -51,6 +51,9 @@
   ],
   "vscode-neovim.useWSL": true,
   "vscode-neovim.neovimExecutablePaths.linux": "nvim",
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
   "whichkey.bindingOverrides": [
     {
       "keys": "r.r",
