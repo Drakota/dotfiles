@@ -1,8 +1,7 @@
-local fn = vim.fn
+local utils = require "user.utils"
 
-local function not_vscode()
-  return not vim.g.vscode
-end
+local not_vscode = utils.not_vscode
+local fn = vim.fn
 
 -- Automatically install packer
 local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
