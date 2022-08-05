@@ -29,6 +29,7 @@
   "editor.hover.above": false,
   "editor.inlineSuggest.enabled": true,
   "editor.scrollBeyondLastLine": false,
+  "editor.experimental.useCustomCodeActionMenu": true,
   "terminal.integrated.inheritEnv": true,
   "terminal.integrated.tabs.enabled": false,
   "terminal.integrated.cursorBlinking": true,

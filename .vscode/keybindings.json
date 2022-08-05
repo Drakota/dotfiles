@@ -18,9 +18,19 @@
     "command": "workbench.action.focusAuxiliaryBar"
   },
   {
+    "key": "ctrl+f",
+    "command": "-list.find",
+    "when": "listFocus && listSupportsFind"
+  },
+  {
+    "key": "/",
+    "command": "list.find",
+    "when": "listFocus && listSupportsFind"
+  },
+  {
     "key": "space",
     "command": "whichkey.show",
-    "when": "(editorTextFocus && vim.mode == 'Normal' && neovim.mode == normal) || !inputFocus"
+    "when": "editorTextFocus && vim.mode != 'Insert' && vim.mode != 'CommandlineInProgress' && vim.mode != 'SearchInProgressMode' && vim.mode != 'EasyMotionInputMode' && neovim.mode == normal || !inputFocus"
   },
   {
     "key": "ctrl+k",
@@ -50,16 +60,6 @@
     "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
   },
   {
-    "key": "ctrl+j",
-    "command": "showNextParameterHint",
-    "when": "editorTextFocus && parameterHintsMultipleSignatures && parameterHintsVisible"
-  },
-  {
-    "key": "ctrl+k",
-    "command": "showPrevParameterHint",
-    "when": "editorTextFocus && parameterHintsMultipleSignatures && parameterHintsVisible"
-  },
-  {
     "key": "ctrl+k",
     "command": "workbench.action.quickOpenSelectPrevious",
     "when": "inQuickOpen"
@@ -68,6 +68,16 @@
     "key": "ctrl+j",
     "command": "workbench.action.quickOpenSelectNext",
     "when": "inQuickOpen"
+  },
+  {
+    "key": "ctrl+k",
+    "when": "CodeActionMenuVisible",
+    "command": "focusPreviousCodeAction"
+  },
+  {
+    "key": "ctrl+j",
+    "when": "CodeActionMenuVisible",
+    "command": "focusNextCodeAction"
   },
   {
     "key": "d",
@@ -109,7 +119,25 @@
     "command": "explorer.newFolder",
     "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   },
-  // Remove <C-P> & <C-N> from vscode-neovim
+  // Remove <C-N> & <C-P> from vscode-neovim
+  {
+    "command": "-vscode-neovim.send",
+    "key": "ctrl+n"
+  },
+  {
+    "command": "-vscode-neovim.send",
+    "key": "ctrl+p"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "-workbench.action.quickOpenSelectNext",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "-workbench.action.quickOpenSelectPrevious",
+    "when": "inQuickOpen"
+  },
   {
     "key": "ctrl+n",
     "command": "-list.focusDown",
@@ -141,23 +169,13 @@
     "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
   },
   {
-    "key": "ctrl+n",
-    "command": "-workbench.action.quickOpenSelectNext",
-    "when": "inQuickOpen"
-  },
-  {
     "key": "ctrl+p",
-    "command": "-workbench.action.quickOpenSelectPrevious",
-    "when": "inQuickOpen"
+    "command": "-workbench.action.quickOpenNavigateNextInFilePicker",
+    "when": "inFilesPicker && inQuickOpen"
   },
   {
-    "key": "ctrl+n",
-    "command": "-showNextParameterHint",
-    "when": "editorTextFocus && parameterHintsMultipleSignatures && parameterHintsVisible"
-  },
-  {
-    "key": "ctrl+p",
-    "command": "-showPrevParameterHint",
-    "when": "editorTextFocus && parameterHintsMultipleSignatures && parameterHintsVisible"
+    "key": "ctrl+shift+p",
+    "command": "-workbench.action.quickOpenNavigatePreviousInFilePicker",
+    "when": "inFilesPicker && inQuickOpen"
   }
 ]
