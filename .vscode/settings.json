@@ -28,13 +28,18 @@
   "editor.fontFamily": "'Cascadia Code', Consolas, 'Courier New', monospace",
   "editor.hover.above": false,
   "editor.inlineSuggest.enabled": true,
+  "editor.suggest.matchOnWordStartOnly": false,
   "editor.scrollBeyondLastLine": false,
   "editor.experimental.useCustomCodeActionMenu": true,
+  "editor.inlayHints.padding": true,
   "terminal.integrated.inheritEnv": true,
   "terminal.integrated.tabs.enabled": false,
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.shellIntegration.enabled": true,
   "terminal.integrated.shellIntegration.showWelcome": false,
+  "diffEditor.renderSideBySide": false,
+  "git.allowForcePush": true,
+  "git.confirmForcePush": true,
   "settingsSync.ignoredExtensions": [
     "shakram02.bash-beautify",
     "dart-code.dart-code",
@@ -52,78 +57,270 @@
   ],
   "vscode-neovim.useWSL": true,
   "vscode-neovim.neovimExecutablePaths.linux": "nvim",
+  "vscode-neovim.neovimExecutablePaths.darwin": "nvim",
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
   },
-  "whichkey.bindingOverrides": [
+  "whichkey.bindings": [
     {
-      "keys": "r.r",
-      "name": "Rust-analyzer: run",
+      "key": "?",
+      "name": "Search keybindings",
+      "icon": "keyboard",
       "type": "command",
-      "command": "rust-analyzer.run"
+      "command": "whichkey.searchBindings"
     },
     {
-      "keys": "l",
-      "name": "+LSP",
+      "key": "g",
+      "name": "+Git",
+      "icon": "git-branch",
       "type": "bindings",
-      "position": 10,
       "bindings": [
         {
+          "key": "a",
+          "name": "Amend",
+          "type": "command",
+          "command": "git.commitStagedAmend"
+        },
+        {
+          "key": "b",
+          "name": "Checkout",
+          "type": "command",
+          "command": "git.checkout"
+        },
+        {
+          "key": "c",
+          "name": "Commit",
+          "type": "command",
+          "command": "git.commit"
+        },
+        {
           "key": "d",
-          "name": "Go to definition",
+          "name": "Discard changes",
           "type": "command",
-          "command": "editor.action.revealDefinition"
+          "command": "git.clean"
         },
         {
-          "key": "D",
-          "name": "Go to declaration",
+          "key": "f",
+          "name": "Fetch",
           "type": "command",
-          "command": "editor.action.revealDeclaration"
-        },
-        {
-          "key": "t",
-          "name": "Go to type definition",
-          "type": "command",
-          "command": "editor.action.goToTypeDefinition"
+          "command": "git.fetch"
         },
         {
           "key": "i",
-          "name": "Go to implementations",
+          "name": "Init",
           "type": "command",
-          "command": "editor.action.goToImplementation"
+          "command": "git.init"
         },
         {
-          "key": "r",
-          "name": "Go to references",
+          "key": "m",
+          "name": "Merge",
           "type": "command",
-          "command": "editor.action.goToReferences"
+          "command": "git.merge"
+        },
+        {
+          "key": "p",
+          "name": "Publish",
+          "type": "command",
+          "command": "git.publish"
+        },
+        {
+          "key": "s",
+          "name": "Stage",
+          "type": "command",
+          "command": "git.stage"
+        },
+        {
+          "key": "S",
+          "name": "Stage all",
+          "type": "command",
+          "command": "git.stageAll"
+        },
+        {
+          "key": "t",
+          "name": "Status",
+          "type": "command",
+          "command": "workbench.view.scm"
+        },
+        {
+          "key": "u",
+          "name": "Unstage",
+          "type": "command",
+          "command": "git.unstage"
+        },
+        {
+          "key": "U",
+          "name": "Unstage all",
+          "type": "command",
+          "command": "git.unstageAll"
         }
       ]
     },
     {
-      "keys": "t",
+      "key": "t",
       "name": "+Tasks",
+      "icon": "tasklist",
       "type": "bindings",
       "bindings": [
         {
-          "key": "b",
-          "name": "Run build task",
+          "key": ".",
+          "name": "Rerun last task",
           "type": "command",
-          "command": "workbench.action.tasks.build"
+          "command": "workbench.action.tasks.reRunTask"
         },
         {
-          "key": "t",
+          "key": ":",
           "name": "Run task",
           "type": "command",
           "command": "workbench.action.tasks.runTask"
         },
         {
+          "key": "b",
+          "name": "Run build tasks",
+          "type": "command",
+          "command": "workbench.action.tasks.build"
+        },
+        {
           "key": "c",
-          "name": "Close task",
+          "name": "Configure task runner",
+          "type": "command",
+          "command": "workbench.action.tasks.configureTaskRunner"
+        },
+        {
+          "key": "g",
+          "name": "Show running tasks",
+          "type": "command",
+          "command": "workbench.action.tasks.showTasks"
+        },
+        {
+          "key": "l",
+          "name": "Show task log",
+          "type": "command",
+          "command": "workbench.action.tasks.showLog"
+        },
+        {
+          "key": "t",
+          "name": "Run test task",
+          "type": "command",
+          "command": "workbench.action.tasks.test"
+        },
+        {
+          "key": "x",
+          "name": "Terminate task",
           "type": "command",
           "command": "workbench.action.tasks.terminate"
+        },
+        {
+          "key": "R",
+          "name": "Restart running task",
+          "type": "command",
+          "command": "workbench.action.tasks.restartTask"
         }
       ]
-    }
+    },
+    {
+      "key": "x",
+      "name": "+Text",
+      "icon": "repl",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "i",
+          "name": "Organize imports",
+          "type": "command",
+          "command": "editor.action.organizeImports"
+        },
+        {
+          "key": "r",
+          "name": "Rename symbol",
+          "type": "command",
+          "command": "editor.action.rename"
+        },
+        {
+          "key": "R",
+          "name": "Refactor",
+          "type": "command",
+          "command": "editor.action.refactor"
+        },
+        {
+          "key": ".",
+          "name": "Quick fix",
+          "type": "command",
+          "command": "editor.action.quickFix"
+        },
+        {
+          "key": "a",
+          "name": "Find all references",
+          "type": "command",
+          "command": "editor.action.referenceSearch.trigger"
+        },
+        {
+          "key": "m",
+          "name": "+Merge conflict",
+          "type": "bindings",
+          "bindings": [
+            {
+              "key": "b",
+              "name": "Accept both",
+              "type": "command",
+              "command": "merge-conflict.accept.both"
+            },
+            {
+              "key": "c",
+              "name": "Accept current",
+              "type": "command",
+              "command": "merge-conflict.accept.current"
+            },
+            {
+              "key": "i",
+              "name": "Accept incoming",
+              "type": "command",
+              "command": "merge-conflict.accept.incoming"
+            },
+            {
+              "key": "B",
+              "name": "Accept all both",
+              "type": "command",
+              "command": "merge-conflict.accept.all-both"
+            },
+            {
+              "key": "C",
+              "name": "Accept all current",
+              "type": "command",
+              "command": "merge-conflict.accept.all-current"
+            },
+            {
+              "key": "I",
+              "name": "Accept all incoming",
+              "type": "command",
+              "command": "merge-conflict.accept.all-incoming"
+            },
+            {
+              "key": "s",
+              "name": "Accept selection",
+              "type": "command",
+              "command": "merge-conflict.accept.selection"
+            },
+            {
+              "key": "k",
+              "name": "Compare current conflict",
+              "type": "command",
+              "command": "merge-conflict.compare"
+            },
+            {
+              "key": "n",
+              "name": "Next Conflict",
+              "type": "command",
+              "command": "merge-conflict.next"
+            },
+            {
+              "key": "N",
+              "name": "Previous Conflict",
+              "type": "command",
+              "command": "merge-conflict.previous"
+            }
+          ]
+        }
+      ]
+    },
   ]
 }

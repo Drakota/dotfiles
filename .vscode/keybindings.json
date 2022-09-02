@@ -71,13 +71,13 @@
   },
   {
     "key": "ctrl+k",
-    "when": "CodeActionMenuVisible",
-    "command": "focusPreviousCodeAction"
+    "when": "codeactionmenuvisible",
+    "command": "selectprevcodeaction"
   },
   {
     "key": "ctrl+j",
-    "when": "CodeActionMenuVisible",
-    "command": "focusNextCodeAction"
+    "when": "codeActionMenuVisible",
+    "command": "selectNextCodeAction"
   },
   {
     "key": "d",
