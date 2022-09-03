@@ -4,7 +4,7 @@ local keymap = utils.keymap
 local vscode = utils.vscode
 
 -- Normal keymaps
-keymap("n", "s", ":HopWord<CR>")
+keymap("n", "s", "<Plug>Lightspeed_omni_s")
 
 -- Visual keymaps
 -- Continue indenting

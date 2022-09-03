@@ -76,7 +76,7 @@ return packer.startup(function(use)
       require("user.nvim-tree")
     end
   }
-  use { "phaazon/hop.nvim", config = function() require("user.hop") end }
+  use { "ggandor/lightspeed.nvim" }
   use { "vim-scripts/ReplaceWithRegister" }
 
   if PACKER_BOOTSTRAP then
