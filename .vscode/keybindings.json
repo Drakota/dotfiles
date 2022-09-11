@@ -1,22 +1,24 @@
 [
   {
-    "key": "ctrl+alt+t",
-    "command": "workbench.action.terminal.toggleTerminal",
-    "when": "terminal.active"
+    "key": "space",
+    "command": "whichkey.show",
+    "when": "editorTextFocus && vim.mode != 'Insert' && vim.mode != 'CommandlineInProgress' && vim.mode != 'SearchInProgressMode' && vim.mode != 'EasyMotionInputMode' && neovim.mode == normal || !inputFocus"
+  },
+  // #region Layout mappings
+  {
+    "key": "ctrl+-",
+    "command": "workbench.action.togglePanel"
   },
   {
-    "key": "ctrl+`",
-    "command": "workbench.action.togglePanel",
-    "when": "terminal.active"
+    "key": "ctrl+=",
+    "command": "notifications.focusToasts"
   },
   {
     "key": "ctrl+\\",
     "command": "workbench.action.toggleAuxiliaryBar"
   },
-  {
-    "key": "ctrl+shift+\\",
-    "command": "workbench.action.focusAuxiliaryBar"
-  },
+  // #endregion
+  // #region List search mappings
   {
     "key": "ctrl+f",
     "command": "-list.find",
@@ -27,11 +29,8 @@
     "command": "list.find",
     "when": "listFocus && listSupportsFind"
   },
-  {
-    "key": "space",
-    "command": "whichkey.show",
-    "when": "editorTextFocus && vim.mode != 'Insert' && vim.mode != 'CommandlineInProgress' && vim.mode != 'SearchInProgressMode' && vim.mode != 'EasyMotionInputMode' && neovim.mode == normal || !inputFocus"
-  },
+  // #endregion
+  // #region Window navigation mappings
   {
     "key": "ctrl+k",
     "command": "workbench.action.navigateUp"
@@ -49,6 +48,85 @@
     "command": "workbench.action.navigateRight",
     "when": "!terminalFocus"
   },
+  // #endregion
+  // #region Editor splits mappings
+  {
+    "key": "ctrl+w l",
+    "command": "workbench.action.toggleEditorGroupLock",
+    "when": "!editorFocus"
+  },
+  {
+    "key": "ctrl+w s",
+    "command": "workbench.action.splitEditorDown",
+    "when": "!editorFocus"
+  },
+  {
+    "key": "ctrl+w v",
+    "command": "workbench.action.splitEditor",
+    "when": "!editorFocus"
+  },
+  {
+    "key": "ctrl+w q",
+    "command": "workbench.action.closeActiveEditor",
+    "when": "!editorFocus"
+  },
+  {
+    "key": "ctrl+w q",
+    "command": "workbench.action.closeGroup",
+    "when": "!editorFocus && activeEditorGroupEmpty && multipleEditorGroups"
+  },
+  {
+    "key": "ctrl+w shift+h",
+    "command": "workbench.action.moveActiveEditorGroupLeft",
+    "when": "!editorFocus"
+  },
+  {
+    "key": "ctrl+w shift+l",
+    "command": "workbench.action.moveActiveEditorGroupRight",
+    "when": "!editorFocus"
+  },
+  {
+    "key": "ctrl+w shift+k",
+    "command": "workbench.action.moveActiveEditorGroupUp",
+    "when": "!editorFocus"
+  },
+  {
+    "key": "ctrl+w shift+j",
+    "command": "workbench.action.moveActiveEditorGroupDown",
+    "when": "!editorFocus"
+  },
+  {
+    "key": "ctrl+w shift+-",
+    "command": "workbench.action.minimizeOtherEditors",
+    "when": "!editorFocus"
+  },
+  {
+    "key": "ctrl+w =",
+    "command": "workbench.action.evenEditorWidths",
+    "when": "!editorFocus"
+  },
+  {
+    "key": "ctrl+w shift+.",
+    "command": "workbench.action.increaseViewWidth",
+    "when": "!editorFocus"
+  },
+  {
+    "key": "ctrl+w shift+,",
+    "command": "workbench.action.decreaseViewWidth",
+    "when": "!editorFocus"
+  },
+  {
+    "key": "ctrl+w shift+=",
+    "command": "workbench.action.increaseViewHeight",
+    "when": "!editorFocus"
+  },
+  {
+    "key": "ctrl+w -",
+    "command": "workbench.action.decreaseViewHeight",
+    "when": "!editorFocus"
+  },
+  // #endregion
+  // #region List navigation mappings
   {
     "key": "ctrl+k",
     "command": "selectPrevSuggestion",
@@ -71,14 +149,16 @@
   },
   {
     "key": "ctrl+k",
-    "when": "codeactionmenuvisible",
-    "command": "selectprevcodeaction"
+    "when": "codeActionMenuVisible",
+    "command": "selectPrevCodeAction"
   },
   {
     "key": "ctrl+j",
     "when": "codeActionMenuVisible",
     "command": "selectNextCodeAction"
   },
+  // #endregion
+  // #region Files explorer mappings
   {
     "key": "d",
     "command": "deleteFile",
@@ -119,7 +199,8 @@
     "command": "explorer.newFolder",
     "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   },
-  // Remove <C-N> & <C-P> from vscode-neovim
+  // #endregion
+  // #region Remove <C-N> & <C-P> from vscode-neovim
   {
     "command": "-vscode-neovim.send",
     "key": "ctrl+n"
@@ -178,4 +259,5 @@
     "command": "-workbench.action.quickOpenNavigatePreviousInFilePicker",
     "when": "inFilesPicker && inQuickOpen"
   }
+  // #endregion
 ]

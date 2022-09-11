@@ -17,6 +17,7 @@ keymap("v", "p", '"_dP')
 if vscode() then
     -- Normal keymaps
     keymap("n", "gb", ":call VSCodeNotify('editor.action.addSelectionToNextFindMatch')<CR>")
+    keymap("n", "gc", ":call VSCodeNotify('editor.toggleFold')<CR>")
 end
 
 if not vscode() then
