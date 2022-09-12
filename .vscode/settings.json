@@ -37,6 +37,9 @@
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.shellIntegration.enabled": true,
   "terminal.integrated.shellIntegration.showWelcome": false,
+  "terminal.integrated.commandsToSkipShell": [
+    "workbench.action.focusStatusBar"
+  ],
   "diffEditor.renderSideBySide": false,
   "git.allowForcePush": true,
   "git.confirmForcePush": true,

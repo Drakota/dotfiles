@@ -10,6 +10,10 @@
     "command": "workbench.action.togglePanel"
   },
   {
+    "key": "ctrl+shift+-",
+    "command": "workbench.action.focusStatusBar"
+  },
+  {
     "key": "ctrl+=",
     "command": "notifications.focusToasts"
   },
@@ -32,14 +36,6 @@
   // #endregion
   // #region Window navigation mappings
   {
-    "key": "ctrl+k",
-    "command": "workbench.action.navigateUp"
-  },
-  {
-    "key": "ctrl+j",
-    "command": "workbench.action.navigateDown"
-  },
-  {
     "key": "ctrl+h",
     "command": "workbench.action.navigateLeft"
   },
@@ -47,6 +43,41 @@
     "key": "ctrl+l",
     "command": "workbench.action.navigateRight",
     "when": "!terminalFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.navigateUp"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.navigateDown"
+  },
+  // #endregion
+  // #region Focus movement mappings
+  {
+    "key": "h",
+    "command": "workbench.statusBar.focusPrevious",
+    "when": "statusBarFocused"
+  },
+  {
+    "key": "l",
+    "command": "workbench.statusBar.focusNext",
+    "when": "statusBarFocused"
+  },
+  {
+    "key": "k",
+    "command": "workbench.statusBar.focusPrevious",
+    "when": "statusBarFocused"
+  },
+  {
+    "key": "j",
+    "command": "workbench.statusBar.focusNext",
+    "when": "statusBarFocused"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.focusPreviousPart",
+    "when": "statusBarFocused"
   },
   // #endregion
   // #region Editor splits mappings
@@ -200,7 +231,7 @@
     "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   },
   // #endregion
-  // #region Remove <C-N> & <C-P> from vscode-neovim
+  // #region Remove mappings
   {
     "command": "-vscode-neovim.send",
     "key": "ctrl+n"
@@ -258,6 +289,10 @@
     "key": "ctrl+shift+p",
     "command": "-workbench.action.quickOpenNavigatePreviousInFilePicker",
     "when": "inFilesPicker && inQuickOpen"
+  },
+  {
+    "key": "ctrl+shift+=",
+    "command": "-workbench.action.zoomIn"
   }
   // #endregion
 ]
