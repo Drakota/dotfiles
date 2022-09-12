@@ -5,6 +5,7 @@
   "workbench.editor.limit.enabled": true,
   "workbench.editor.limit.value": 1,
   "workbench.editor.limit.perEditorGroup": true,
+  "workbench.editor.splitSizing": "split",
   "workbench.colorTheme": "GitHub Dark Default",
   "workbench.productIconTheme": "fluent-icons",
   "workbench.iconTheme": "eq-material-theme-icons-light",
@@ -38,7 +39,8 @@
   "terminal.integrated.shellIntegration.enabled": true,
   "terminal.integrated.shellIntegration.showWelcome": false,
   "terminal.integrated.commandsToSkipShell": [
-    "workbench.action.focusStatusBar"
+    "workbench.action.focusStatusBar",
+    "workbench.action.toggleAuxiliaryBar"
   ],
   "diffEditor.renderSideBySide": false,
   "git.allowForcePush": true,
@@ -58,11 +60,129 @@
     "dtsvet.vscode-wasm",
     "juanblanco.solidity"
   ],
-  "vscode-neovim.useWSL": true,
-  "vscode-neovim.neovimExecutablePaths.linux": "nvim",
-  "vscode-neovim.neovimExecutablePaths.darwin": "nvim",
+  "vim.enableNeovim": true,
+  "vim.neovimPath": "nvim",
+  "vim.easymotion": true,
+  "vim.useSystemClipboard": true,
+  "vim.replaceWithRegister": true,
+  "vim.handleKeys": {
+    "<C-t>": false
+  },
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "s"
+      ],
+      "after": [
+        "<leader>",
+        "<leader>",
+        "s"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "H"
+      ],
+      "commands": [
+        "editor.action.referenceSearch.trigger"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "g",
+        "O"
+      ],
+      "commands": [
+        "workbench.action.gotoSymbol"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "<C-w>",
+        "g",
+        "d"
+      ],
+      "commands": [
+        "editor.action.revealDefinitionAside"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "<C-w>",
+        "l"
+      ],
+      "commands": [
+        "workbench.action.toggleEditorGroupLock"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "g",
+        "c"
+      ],
+      "commands": [
+        "editor.toggleFold"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "<C-w>",
+        "H"
+      ],
+      "commands": [
+        "workbench.action.moveActiveEditorGroupLeft"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "<C-w>",
+        "J"
+      ],
+      "commands": [
+        "workbench.action.moveActiveEditorGroupDown"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "<C-w>",
+        "K"
+      ],
+      "commands": [
+        "workbench.action.moveActiveEditorGroupUp"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "<C-w>",
+        "L"
+      ],
+      "commands": [
+        "workbench.action.moveActiveEditorGroupRight"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "<C-w>",
+        "_"
+      ],
+      "commands": [
+        "workbench.action.minimizeOtherEditors"
+      ],
+      "silent": true
+    }
+  ],
   "extensions.experimental.affinity": {
-    "asvetliakov.vscode-neovim": 1
+    "vscodevim.vim": 1
   },
   "whichkey.bindings": [
     {
@@ -229,6 +349,12 @@
           "name": "Publish",
           "type": "command",
           "command": "git.publish"
+        },
+        {
+          "key": "P",
+          "name": "Push (Force)",
+          "type": "command",
+          "command": "git.pushForce"
         },
         {
           "key": "s",
