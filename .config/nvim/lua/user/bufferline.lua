@@ -1,8 +1,21 @@
 local status_ok, bufferline = pcall(require, "bufferline")
 if not status_ok then
-    return
+  return
 end
 
 bufferline.setup({
-    closable = false
+  options = {
+    show_close_icon = false,
+    mode = "tabs",
+    buffer_close_icon = '',
+    close_icon = '',
+    offsets = {
+      {
+        filetype = "NvimTree",
+        text = "File Explorer",
+        text_align = "center",
+        separator = false
+      }
+    }
+  }
 })

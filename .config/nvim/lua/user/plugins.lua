@@ -49,7 +49,7 @@ return packer.startup(function(use)
   use { "bluz71/vim-nightfly-guicolors" }
   use { "kyazdani42/nvim-web-devicons", opt = true, cond = { not_vscode } }
   use {
-    "romgrk/barbar.nvim",
+    "akinsho/bufferline.nvim",
     opt = true,
     cond = { not_vscode },
     after = "nvim-web-devicons",

@@ -18,6 +18,9 @@ vim.opt.wrap = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
+-- Remove status line on splits
+vim.opt.laststatus = 3
+
 vim.opt.completeopt = { "menuone", "noselect" }
 vim.opt.showtabline = 2
 vim.opt.smartcase = true
@@ -29,14 +32,14 @@ vim.opt.showmode = false
 
 vim.cmd("set clipboard^=unnamed,unnamedplus")
 vim.g.clipboard = {
-    name = "win32yank-wsl",
-    copy = {
-        ["+"] = "win32yank.exe -i",
-        ["*"] = "win32yank.exe -i"
-    },
-    paste = {
-        ["+"] = "win32yank.exe -o",
-        ["*"] = "win32yank.exe -o"
-    },
-    cache_enable = 0,
+  name = "win32yank-wsl",
+  copy = {
+    ["+"] = "win32yank.exe -i",
+    ["*"] = "win32yank.exe -i"
+  },
+  paste = {
+    ["+"] = "win32yank.exe -o",
+    ["*"] = "win32yank.exe -o"
+  },
+  cache_enable = 0
 }
