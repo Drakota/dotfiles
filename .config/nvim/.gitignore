@@ -76,6 +76,7 @@ bundle/
 # Neovim ShaDa
 shada/
 undo/
+undodir/
 test/vint
 
 # Packer.nvim

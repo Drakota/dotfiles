@@ -34,6 +34,7 @@ end
 
 -- Have packer use a popup window
 packer.init {
+  opt_default = true,
   display = {
     open_fn = function()
       return require("packer.util").float { border = "rounded" }
@@ -44,40 +45,41 @@ packer.init {
 return packer.startup(function(use)
   use { "ifplusor/packer.nvim", opt = false, branch = "fix-sequencing" }
 
-  use { "nvim-lua/popup.nvim", opt = true, cond = { not_vscode } }
-  use { "nvim-lua/plenary.nvim", opt = true, cond = { not_vscode } }
-  use { "bluz71/vim-nightfly-guicolors" }
-  use { "kyazdani42/nvim-web-devicons", opt = true, cond = { not_vscode } }
-  use {
-    "akinsho/bufferline.nvim",
-    opt = true,
-    cond = { not_vscode },
-    after = "nvim-web-devicons",
-    config = function()
-      require("user.bufferline")
-    end
-  }
-  use { "nvim-telescope/telescope.nvim", opt = true, cond = { not_vscode } }
-  use {
-    "nvim-lualine/lualine.nvim",
-    opt = true,
-    cond = { not_vscode },
-    after = "nvim-web-devicons",
-    config = function()
-      require("user.lualine")
-    end
-  }
-  use {
-    "kyazdani42/nvim-tree.lua",
-    opt = true,
-    cond = { not_vscode },
-    after = "nvim-web-devicons",
-    config = function()
-      require("user.nvim-tree")
-    end
-  }
-  use { "ggandor/lightspeed.nvim" }
-  use { "vim-scripts/ReplaceWithRegister" }
+  -- General
+  use { "ggandor/lightspeed.nvim", opt = false }
+  use { "vim-scripts/ReplaceWithRegister", opt = false }
+  use { "projekt0n/github-nvim-theme", opt = false }
+
+  -- Utilities
+  use { "nvim-lua/popup.nvim", cond = { not_vscode } }
+  use { "nvim-lua/plenary.nvim", cond = { not_vscode } }
+  use { "numToStr/Comment.nvim", config = "require('user.comment')", cond = { not_vscode } }
+
+  -- UI
+  use { "kyazdani42/nvim-web-devicons", cond = { not_vscode } }
+  use { "akinsho/bufferline.nvim", config = "require('user.bufferline')", cond = { not_vscode } }
+  use { "nvim-telescope/telescope.nvim", cond = { not_vscode } }
+  use { "nvim-lualine/lualine.nvim", config = "require('user.lualine')", cond = { not_vscode } }
+  use { "kyazdani42/nvim-tree.lua", config = "require('user.nvim-tree')", cond = { not_vscode } }
+
+  -- Autocompletion
+  use { "L3MON4D3/LuaSnip", event = "VimEnter", cond = { not_vscode } }
+  use { "rafamadriz/friendly-snippets", event = "VimEnter", cond = { not_vscode } }
+  use { "hrsh7th/nvim-cmp", after = "LuaSnip", event = "VimEnter", config = "require('user.cmp')", cond = { not_vscode } }
+  use { "hrsh7th/cmp-buffer", after = "nvim-cmp", event = "VimEnter", cond = { not_vscode } }
+  use { "hrsh7th/cmp-path", after = "nvim-cmp", event = "VimEnter", cond = { not_vscode } }
+  use { "hrsh7th/cmp-cmdline", after = "nvim-cmp", event = "VimEnter", cond = { not_vscode } }
+  use { "hrsh7th/cmp-nvim-lsp", after = "nvim-cmp", event = "VimEnter", cond = { not_vscode } }
+  use { "saadparwaiz1/cmp_luasnip", after = "nvim-cmp", event = "VimEnter", cond = { not_vscode } }
+  use { "github/copilot.vim", cond = { not_vscode } }
+
+  -- LSP
+  use { "williamboman/mason.nvim", cond = { not_vscode } }
+  use { "williamboman/mason-lspconfig.nvim", after = "mason.nvim", cond = { not_vscode } }
+  use { "neovim/nvim-lspconfig", after = "mason-lspconfig.nvim", config = "require('user.lsp')", cond = { not_vscode } }
+
+  -- Formatting
+  use { "jose-elias-alvarez/null-ls.nvim", after = "nvim-lspconfig", cond = { not_vscode } }
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()

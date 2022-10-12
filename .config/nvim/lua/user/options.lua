@@ -21,7 +21,14 @@ vim.opt.splitright = true
 -- Remove status line on splits
 vim.opt.laststatus = 3
 
-vim.opt.completeopt = { "menuone", "noselect" }
+-- Undo history
+vim.opt.undodir = vim.fn.stdpath('config') .. '/undodir'
+vim.opt.undofile = true
+vim.opt.undolevels = 10000
+
+-- Limit the maximum number of items to show in the popup menu
+vim.opt.pumheight = 12
+
 vim.opt.showtabline = 2
 vim.opt.smartcase = true
 vim.opt.smartindent = true

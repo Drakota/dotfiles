@@ -1,9 +1,12 @@
 vim.cmd "colorscheme default"
 
-local colorscheme = "nightfly"
+local colorscheme = "github_dark_default"
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 if not status_ok then
   vim.notify("Failed to load colorscheme " .. colorscheme)
 end
 
-vim.cmd "highlight VertSplit ctermbg=NONE guibg=NONE"
+require("github-theme").setup({
+  colors = { bg_sidebar = "#010409", border = "#30363d", bg_visual = "#30363d" }
+})
+
