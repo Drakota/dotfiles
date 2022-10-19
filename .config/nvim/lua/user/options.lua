@@ -29,6 +29,9 @@ vim.opt.undolevels = 10000
 -- Limit the maximum number of items to show in the popup menu
 vim.opt.pumheight = 12
 
+-- Stop auto-resizing when splitting
+vim.cmd("set noequalalways")
+
 vim.opt.showtabline = 2
 vim.opt.smartcase = true
 vim.opt.smartindent = true

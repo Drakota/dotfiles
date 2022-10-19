@@ -40,7 +40,26 @@ if not vscode() then
   -- Open Telescope
   keymap("n", "<C-S-p>", ":Telescope<CR>")
   keymap("n", "<C-p>", ":Telescope find_files<CR>")
+  keymap("n", "<C-S-o>", ":Telescope lsp_document_symbols<CR>")
+  keymap("n", "<C-t>", ":Telescope lsp_workspace_symbols<CR>")
 
   -- Terminal keymaps
   keymap("t", "<Esc>", "<C-\\><C-n>")
+
+  -- LSP keymaps
+  keymap("n", "gd", "<cmd>:Telescope lsp_definitions<CR>")
+  keymap("n", "gH", "<cmd>:Telescope lsp_references<CR>")
+  keymap("n", "gi", "<cmd>:Telescope lsp_implementations<CR>")
+  keymap("n", "gR", "<cmd>lua vim.lsp.buf.rename()<CR>")
+  keymap("n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>")
+  keymap("n", "gK", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
+  keymap("n", "g[", "<cmd>lua vim.diagnostic.goto_prev()<CR>")
+  keymap("n", "g]", "<cmd>lua vim.diagnostic.goto_next()<CR>")
+  keymap("n", "gq", "<cmd>lua MOVE_NVIMTREE('lua vim.lsp.diagnostic.set_loclist()')<CR>")
+  keymap("n", "gQ", "<cmd>lua MOVE_NVIMTREE('lua vim.lsp.diagnostic.set_qflist()')<CR>")
+  keymap("n", "gA", "<cmd>lua vim.lsp.buf.code_action()<CR>")
+  keymap("n", "gT", "<cmd>:Telescope lsp_type_definitions<CR>")
+  keymap("n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>")
+  -- Change the default keymap for formatting
+  vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
 end

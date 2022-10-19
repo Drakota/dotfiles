@@ -15,10 +15,12 @@ mason_lspconfig.setup({
 })
 
 mason_lspconfig.setup_handlers({
-  function (server_name)
+  function(server_name)
     require("lspconfig")[server_name].setup({
       on_attach = mason.on_attach,
     })
   end
 })
 
+-- Format on save
+vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)]]

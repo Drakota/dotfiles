@@ -16,4 +16,3 @@ nvim_tree.setup({
     }
   }
 })
-

@@ -58,7 +58,7 @@ return packer.startup(function(use)
   -- UI
   use { "kyazdani42/nvim-web-devicons", cond = { not_vscode } }
   use { "akinsho/bufferline.nvim", config = "require('user.bufferline')", cond = { not_vscode } }
-  use { "nvim-telescope/telescope.nvim", cond = { not_vscode } }
+  use { "nvim-telescope/telescope.nvim", config = "require('user.telescope')", cond = { not_vscode } }
   use { "nvim-lualine/lualine.nvim", config = "require('user.lualine')", cond = { not_vscode } }
   use { "kyazdani42/nvim-tree.lua", config = "require('user.nvim-tree')", cond = { not_vscode } }
 
@@ -77,9 +77,6 @@ return packer.startup(function(use)
   use { "williamboman/mason.nvim", cond = { not_vscode } }
   use { "williamboman/mason-lspconfig.nvim", after = "mason.nvim", cond = { not_vscode } }
   use { "neovim/nvim-lspconfig", after = "mason-lspconfig.nvim", config = "require('user.lsp')", cond = { not_vscode } }
-
-  -- Formatting
-  use { "jose-elias-alvarez/null-ls.nvim", after = "nvim-lspconfig", cond = { not_vscode } }
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()
