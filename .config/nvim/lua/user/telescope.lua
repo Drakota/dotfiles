@@ -11,5 +11,16 @@ telescope.setup({
         ["<C-k>"] = require("telescope.actions").move_selection_previous
       }
     }
+  },
+  extensions = {
+    ["ui-select"] = {
+      require("telescope.themes").get_cursor({
+        layout_config = {
+          preview_cutoff = 1
+        }
+      })
+    }
   }
 })
+
+telescope.load_extension("ui-select")

@@ -14,9 +14,12 @@ mason_lspconfig.setup({
   automatic_installation = true,
 })
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 mason_lspconfig.setup_handlers({
   function(server_name)
     require("lspconfig")[server_name].setup({
+      capabilities = capabilities,
       on_attach = mason.on_attach,
     })
   end

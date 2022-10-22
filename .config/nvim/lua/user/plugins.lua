@@ -58,7 +58,9 @@ return packer.startup(function(use)
   -- UI
   use { "kyazdani42/nvim-web-devicons", cond = { not_vscode } }
   use { "akinsho/bufferline.nvim", config = "require('user.bufferline')", cond = { not_vscode } }
-  use { "nvim-telescope/telescope.nvim", config = "require('user.telescope')", cond = { not_vscode } }
+  use { "nvim-telescope/telescope-ui-select.nvim", cond = { not_vscode } }
+  use { "nvim-telescope/telescope.nvim", after = { "plenary.nvim", "telescope-ui-select.nvim" },
+    config = "require('user.telescope')", cond = { not_vscode } }
   use { "nvim-lualine/lualine.nvim", config = "require('user.lualine')", cond = { not_vscode } }
   use { "kyazdani42/nvim-tree.lua", config = "require('user.nvim-tree')", cond = { not_vscode } }
 
@@ -74,9 +76,19 @@ return packer.startup(function(use)
   use { "github/copilot.vim", cond = { not_vscode } }
 
   -- LSP
-  use { "williamboman/mason.nvim", cond = { not_vscode } }
+  use { "williamboman/mason.nvim", after = "nvim-cmp", cond = { not_vscode } }
   use { "williamboman/mason-lspconfig.nvim", after = "mason.nvim", cond = { not_vscode } }
   use { "neovim/nvim-lspconfig", after = "mason-lspconfig.nvim", config = "require('user.lsp')", cond = { not_vscode } }
+
+  -- Treesitter
+  use { "nvim-treesitter/nvim-treesitter", after = "telescope.nvim", run = ":TSUpdate",
+    config = "require('user.treesitter')",
+    cond = { not_vscode } }
+  use { "nvim-treesitter/playground", after = "nvim-treesitter", cond = { not_vscode } }
+
+  -- Autopairs
+  use { "windwp/nvim-autopairs", after = { "nvim-treesitter", "nvim-cmp" }, config = "require('user.autopairs')",
+    cond = { not_vscode } }
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()

@@ -10,3 +10,5 @@ require("github-theme").setup({
   colors = { bg_sidebar = "#010409", border = "#30363d", bg_visual = "#30363d" }
 })
 
+vim.cmd "highlight! BorderBG guibg=NONE guifg=#30363d"
+vim.cmd "highlight! NormalFloat guibg=#161b22 guifg=NONE"

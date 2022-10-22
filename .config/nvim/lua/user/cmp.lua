@@ -81,7 +81,9 @@ cmp.setup({
     { name = "buffer" },
   }),
   window = {
-    documentation = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered({
+      winhighlight = "Normal:Normal,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None"
+    }),
   }
 })
 
