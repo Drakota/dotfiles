@@ -12,3 +12,12 @@ require("github-theme").setup({
 
 vim.cmd "highlight! BorderBG guibg=NONE guifg=#30363d"
 vim.cmd "highlight! NormalFloat guibg=#161b22 guifg=NONE"
+
+vim.fn.sign_define("DiagnosticSignError",
+  { text = "", texthl = "DiagnosticSignError" })
+vim.fn.sign_define("DiagnosticSignWarn",
+  { text = "", texthl = "DiagnosticSignWarn" })
+vim.fn.sign_define("DiagnosticSignInfo",
+  { text = "", texthl = "DiagnosticSignInfo" })
+vim.fn.sign_define("DiagnosticSignHint",
+  { text = "", texthl = "DiagnosticSignHint" })

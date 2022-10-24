@@ -62,7 +62,9 @@ return packer.startup(function(use)
   use { "nvim-telescope/telescope.nvim", after = { "plenary.nvim", "telescope-ui-select.nvim" },
     config = "require('user.telescope')", cond = { not_vscode } }
   use { "nvim-lualine/lualine.nvim", config = "require('user.lualine')", cond = { not_vscode } }
-  use { "kyazdani42/nvim-tree.lua", config = "require('user.nvim-tree')", cond = { not_vscode } }
+  use { "MunifTanjim/nui.nvim", cond = { not_vscode } }
+  use { "nvim-neo-tree/neo-tree.nvim", after = { "plenary.nvim", "nui.nvim" }, config = "require('user.neo-tree')",
+    cond = { not_vscode } }
 
   -- Autocompletion
   use { "L3MON4D3/LuaSnip", event = "VimEnter", cond = { not_vscode } }

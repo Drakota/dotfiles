@@ -47,7 +47,7 @@ local mapping = {
   ["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
   ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
   ["<C-e>"] = cmp.mapping(cmp.mapping.abort(), { "i", "c" }),
-  ["<CR>"] = cmp.mapping.confirm({ select = true }),
+  ["<CR>"] = cmp.mapping.confirm({ select = true })
 }
 
 cmp.setup({
