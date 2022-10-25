@@ -47,13 +47,30 @@ local mapping = {
   ["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
   ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
   ["<C-e>"] = cmp.mapping(cmp.mapping.abort(), { "i", "c" }),
-  ["<CR>"] = cmp.mapping.confirm({ select = true })
+  ["<CR>"] = cmp.mapping.confirm({ select = true }, { "i", "c" }),
+  ["<Tab>"] = cmp.mapping(function(fallback)
+    if cmp.visible() then
+      cmp.select_next_item()
+    elseif luasnip.expandable() then
+      luasnip.expand()
+    elseif luasnip.expand_or_jumpable() then
+      luasnip.expand_or_jump()
+    else
+      fallback()
+    end
+  end, { "i", "c" }),
+  ["<S-Tab>"] = cmp.mapping(function(fallback)
+    if cmp.visible() then
+      cmp.select_prev_item()
+    elseif luasnip.jumpable(-1) then
+      luasnip.jump(-1)
+    else
+      fallback()
+    end
+  end, { "i", "c" }),
 }
 
 cmp.setup({
-  completion = {
-    completeopt = "menu,menuone,noinsert"
-  },
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body)

@@ -1,6 +1,3 @@
-local utils = require "user.utils"
-
-local not_vscode = utils.not_vscode
 local fn = vim.fn
 
 -- Automatically install packer
@@ -34,7 +31,6 @@ end
 
 -- Have packer use a popup window
 packer.init {
-  opt_default = true,
   display = {
     open_fn = function()
       return require("packer.util").float { border = "rounded" }
@@ -43,54 +39,51 @@ packer.init {
 }
 
 return packer.startup(function(use)
-  use { "ifplusor/packer.nvim", opt = false, branch = "fix-sequencing" }
+  use { "wbthomason/packer.nvim" }
 
   -- General
-  use { "ggandor/lightspeed.nvim", opt = false }
-  use { "vim-scripts/ReplaceWithRegister", opt = false }
-  use { "projekt0n/github-nvim-theme", opt = false }
+  use { "phaazon/hop.nvim", branch = "v2", config = "require('user.hop')" }
+  use { "vim-scripts/ReplaceWithRegister" }
+  use { "projekt0n/github-nvim-theme" }
 
   -- Utilities
-  use { "nvim-lua/popup.nvim", cond = { not_vscode } }
-  use { "nvim-lua/plenary.nvim", cond = { not_vscode } }
-  use { "numToStr/Comment.nvim", config = "require('user.comment')", cond = { not_vscode } }
+  use { "nvim-lua/popup.nvim" }
+  use { "nvim-lua/plenary.nvim" }
+  use { "numToStr/Comment.nvim", config = "require('user.comment')" }
+  use { "RRethy/vim-illuminate", config = "require('user.illuminate')" }
 
   -- UI
-  use { "kyazdani42/nvim-web-devicons", cond = { not_vscode } }
-  use { "akinsho/bufferline.nvim", config = "require('user.bufferline')", cond = { not_vscode } }
-  use { "nvim-telescope/telescope-ui-select.nvim", cond = { not_vscode } }
-  use { "nvim-telescope/telescope.nvim", after = { "plenary.nvim", "telescope-ui-select.nvim" },
-    config = "require('user.telescope')", cond = { not_vscode } }
-  use { "nvim-lualine/lualine.nvim", config = "require('user.lualine')", cond = { not_vscode } }
-  use { "MunifTanjim/nui.nvim", cond = { not_vscode } }
-  use { "nvim-neo-tree/neo-tree.nvim", after = { "plenary.nvim", "nui.nvim" }, config = "require('user.neo-tree')",
-    cond = { not_vscode } }
+  use { "kyazdani42/nvim-web-devicons" }
+  use { "akinsho/bufferline.nvim", config = "require('user.bufferline')" }
+  use { "nvim-telescope/telescope-ui-select.nvim" }
+  use { "nvim-telescope/telescope.nvim", config = "require('user.telescope')" }
+  use { "nvim-lualine/lualine.nvim", config = "require('user.lualine')" }
+  use { "MunifTanjim/nui.nvim" }
+  use { "nvim-neo-tree/neo-tree.nvim", config = "require('user.neo-tree')" }
+  use { "folke/noice.nvim", config = "require('user.noice')" }
 
   -- Autocompletion
-  use { "L3MON4D3/LuaSnip", event = "VimEnter", cond = { not_vscode } }
-  use { "rafamadriz/friendly-snippets", event = "VimEnter", cond = { not_vscode } }
-  use { "hrsh7th/nvim-cmp", after = "LuaSnip", event = "VimEnter", config = "require('user.cmp')", cond = { not_vscode } }
-  use { "hrsh7th/cmp-buffer", after = "nvim-cmp", event = "VimEnter", cond = { not_vscode } }
-  use { "hrsh7th/cmp-path", after = "nvim-cmp", event = "VimEnter", cond = { not_vscode } }
-  use { "hrsh7th/cmp-cmdline", after = "nvim-cmp", event = "VimEnter", cond = { not_vscode } }
-  use { "hrsh7th/cmp-nvim-lsp", after = "nvim-cmp", event = "VimEnter", cond = { not_vscode } }
-  use { "saadparwaiz1/cmp_luasnip", after = "nvim-cmp", event = "VimEnter", cond = { not_vscode } }
-  use { "github/copilot.vim", cond = { not_vscode } }
+  use { "L3MON4D3/LuaSnip", }
+  use { "rafamadriz/friendly-snippets", }
+  use { "hrsh7th/nvim-cmp", config = "require('user.cmp')" }
+  use { "hrsh7th/cmp-buffer" }
+  use { "hrsh7th/cmp-path" }
+  use { "hrsh7th/cmp-cmdline" }
+  use { "hrsh7th/cmp-nvim-lsp" }
+  use { "saadparwaiz1/cmp_luasnip" }
+  use { "github/copilot.vim" }
 
   -- LSP
-  use { "williamboman/mason.nvim", after = "nvim-cmp", cond = { not_vscode } }
-  use { "williamboman/mason-lspconfig.nvim", after = "mason.nvim", cond = { not_vscode } }
-  use { "neovim/nvim-lspconfig", after = "mason-lspconfig.nvim", config = "require('user.lsp')", cond = { not_vscode } }
+  use { "williamboman/mason.nvim" }
+  use { "williamboman/mason-lspconfig.nvim" }
+  use { "neovim/nvim-lspconfig", config = "require('user.lsp')" }
 
   -- Treesitter
-  use { "nvim-treesitter/nvim-treesitter", after = "telescope.nvim", run = ":TSUpdate",
-    config = "require('user.treesitter')",
-    cond = { not_vscode } }
-  use { "nvim-treesitter/playground", after = "nvim-treesitter", cond = { not_vscode } }
+  use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", config = "require('user.treesitter')" }
+  use { "nvim-treesitter/playground" }
 
   -- Autopairs
-  use { "windwp/nvim-autopairs", after = { "nvim-treesitter", "nvim-cmp" }, config = "require('user.autopairs')",
-    cond = { not_vscode } }
+  use { "windwp/nvim-autopairs", config = "require('user.autopairs')" }
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()

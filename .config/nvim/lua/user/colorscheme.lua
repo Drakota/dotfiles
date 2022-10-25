@@ -7,11 +7,13 @@ if not status_ok then
 end
 
 require("github-theme").setup({
-  colors = { bg_sidebar = "#010409", border = "#30363d", bg_visual = "#30363d" }
+  colors = { border = "#30363d", bg_visual = "#30363d" }
 })
 
-vim.cmd "highlight! BorderBG guibg=NONE guifg=#30363d"
-vim.cmd "highlight! NormalFloat guibg=#161b22 guifg=NONE"
+vim.cmd "highlight! NeoTreeNormal guibg=#010409"
+vim.cmd "highlight! NeoTreeNormalNC guibg=#010409"
+vim.cmd "highlight! NoiceCmdlinePopup guibg=#0a0e12"
+vim.cmd "highlight! NoiceCmdlineIconCmdline guifg=#d2a8ff"
 
 vim.fn.sign_define("DiagnosticSignError",
   { text = "", texthl = "DiagnosticSignError" })

@@ -8,6 +8,11 @@ if not mason_lspconfig_status_ok then
   return
 end
 
+local illuminate_status_ok, illuminate = pcall(require, "illuminate")
+if not illuminate_status_ok then
+  return
+end
+
 mason.setup()
 mason_lspconfig.setup({
   ensure_installed = { "sumneko_lua", "tsserver", "jedi_language_server" },
@@ -20,7 +25,9 @@ mason_lspconfig.setup_handlers({
   function(server_name)
     require("lspconfig")[server_name].setup({
       capabilities = capabilities,
-      on_attach = mason.on_attach,
+      on_attach = function(client, bufnr)
+        illuminate.on_attach(client)
+      end
     })
   end
 })
