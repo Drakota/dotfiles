@@ -38,6 +38,7 @@
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.shellIntegration.enabled": true,
   "terminal.integrated.shellIntegration.showWelcome": false,
+  "terminal.integrated.showExitAlert": false,
   "terminal.integrated.commandsToSkipShell": [
     "workbench.action.focusStatusBar",
     "workbench.action.toggleAuxiliaryBar"
@@ -66,7 +67,8 @@
   "vim.useSystemClipboard": true,
   "vim.replaceWithRegister": true,
   "vim.handleKeys": {
-    "<C-t>": false
+    "<C-t>": false,
+    "<C-b>": false
   },
   "vim.normalModeKeyBindingsNonRecursive": [
     {
@@ -117,16 +119,6 @@
       ],
       "commands": [
         "workbench.action.toggleEditorGroupLock"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "g",
-        "c"
-      ],
-      "commands": [
-        "editor.toggleFold"
       ],
       "silent": true
     },
@@ -321,6 +313,12 @@
           "command": "git.clean"
         },
         {
+          "key": "D",
+          "name": "Discard all changes",
+          "type": "command",
+          "command": "git.cleanAll"
+        },
+        {
           "key": "f",
           "name": "Fetch",
           "type": "command",
@@ -447,6 +445,20 @@
           "name": "Restart running task",
           "type": "command",
           "command": "workbench.action.tasks.restartTask"
+        }
+      ]
+    },
+    {
+      "key": "w",
+      "name": "+Window",
+      "icon": "window",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "m",
+          "name": "Markdown: Open Preview to the Side",
+          "type": "command",
+          "command": "markdown.showPreviewToSide"
         }
       ]
     },
