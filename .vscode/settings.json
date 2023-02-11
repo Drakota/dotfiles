@@ -61,6 +61,7 @@
     "dtsvet.vscode-wasm",
     "juanblanco.solidity"
   ],
+  "numberedBookmarks.navigateThroughAllFiles": "allowDuplicates",
   "vim.enableNeovim": true,
   "vim.neovimPath": "nvim",
   "vim.easymotion": true,
@@ -71,6 +72,726 @@
     "<C-b>": false
   },
   "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "m",
+        "0"
+      ],
+      "commands": [
+        "numberedBookmarks.toggleBookmark0"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "m",
+        "1"
+      ],
+      "commands": [
+        "numberedBookmarks.toggleBookmark1"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "m",
+        "2"
+      ],
+      "commands": [
+        "numberedBookmarks.toggleBookmark2"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "m",
+        "3"
+      ],
+      "commands": [
+        "numberedBookmarks.toggleBookmark3"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "m",
+        "4"
+      ],
+      "commands": [
+        "numberedBookmarks.toggleBookmark4"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "m",
+        "5"
+      ],
+      "commands": [
+        "numberedBookmarks.toggleBookmark5"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "m",
+        "6"
+      ],
+      "commands": [
+        "numberedBookmarks.toggleBookmark6"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "m",
+        "7"
+      ],
+      "commands": [
+        "numberedBookmarks.toggleBookmark7"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "m",
+        "8"
+      ],
+      "commands": [
+        "numberedBookmarks.toggleBookmark8"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "m",
+        "9"
+      ],
+      "commands": [
+        "numberedBookmarks.toggleBookmark9"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "m",
+        "a"
+      ],
+      "commands": [
+        "numberedBookmarks.toggleBookmarkA"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "m",
+        "b"
+      ],
+      "commands": [
+        "numberedBookmarks.toggleBookmarkB"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "m",
+        "c"
+      ],
+      "commands": [
+        "numberedBookmarks.toggleBookmarkC"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "m",
+        "d"
+      ],
+      "commands": [
+        "numberedBookmarks.toggleBookmarkD"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "m",
+        "e"
+      ],
+      "commands": [
+        "numberedBookmarks.toggleBookmarkE"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "m",
+        "f"
+      ],
+      "commands": [
+        "numberedBookmarks.toggleBookmarkF"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "m",
+        "g"
+      ],
+      "commands": [
+        "numberedBookmarks.toggleBookmarkG"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "m",
+        "h"
+      ],
+      "commands": [
+        "numberedBookmarks.toggleBookmarkH"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "m",
+        "i"
+      ],
+      "commands": [
+        "numberedBookmarks.toggleBookmarkI"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "m",
+        "j"
+      ],
+      "commands": [
+        "numberedBookmarks.toggleBookmarkJ"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "m",
+        "k"
+      ],
+      "commands": [
+        "numberedBookmarks.toggleBookmarkK"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "m",
+        "l"
+      ],
+      "commands": [
+        "numberedBookmarks.toggleBookmarkL"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "m",
+        "m"
+      ],
+      "commands": [
+        "numberedBookmarks.toggleBookmarkM"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "m",
+        "n"
+      ],
+      "commands": [
+        "numberedBookmarks.toggleBookmarkN"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "m",
+        "o"
+      ],
+      "commands": [
+        "numberedBookmarks.toggleBookmarkO"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "m",
+        "p"
+      ],
+      "commands": [
+        "numberedBookmarks.toggleBookmarkP"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "m",
+        "q"
+      ],
+      "commands": [
+        "numberedBookmarks.toggleBookmarkQ"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "m",
+        "r"
+      ],
+      "commands": [
+        "numberedBookmarks.toggleBookmarkR"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "m",
+        "s"
+      ],
+      "commands": [
+        "numberedBookmarks.toggleBookmarkS"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "m",
+        "t"
+      ],
+      "commands": [
+        "numberedBookmarks.toggleBookmarkT"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "m",
+        "u"
+      ],
+      "commands": [
+        "numberedBookmarks.toggleBookmarkU"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "m",
+        "v"
+      ],
+      "commands": [
+        "numberedBookmarks.toggleBookmarkV"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "m",
+        "w"
+      ],
+      "commands": [
+        "numberedBookmarks.toggleBookmarkW"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "m",
+        "x"
+      ],
+      "commands": [
+        "numberedBookmarks.toggleBookmarkX"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "m",
+        "y"
+      ],
+      "commands": [
+        "numberedBookmarks.toggleBookmarkY"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "m",
+        "z"
+      ],
+      "commands": [
+        "numberedBookmarks.toggleBookmarkZ"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "'",
+        "0"
+      ],
+      "commands": [
+        "numberedBookmarks.jumpToBookmark0"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "'",
+        "1"
+      ],
+      "commands": [
+        "numberedBookmarks.jumpToBookmark1"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "'",
+        "2"
+      ],
+      "commands": [
+        "numberedBookmarks.jumpToBookmark2"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "'",
+        "3"
+      ],
+      "commands": [
+        "numberedBookmarks.jumpToBookmark3"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "'",
+        "4"
+      ],
+      "commands": [
+        "numberedBookmarks.jumpToBookmark4"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "'",
+        "5"
+      ],
+      "commands": [
+        "numberedBookmarks.jumpToBookmark5"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "'",
+        "6"
+      ],
+      "commands": [
+        "numberedBookmarks.jumpToBookmark6"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "'",
+        "7"
+      ],
+      "commands": [
+        "numberedBookmarks.jumpToBookmark7"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "'",
+        "8"
+      ],
+      "commands": [
+        "numberedBookmarks.jumpToBookmark8"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "'",
+        "9"
+      ],
+      "commands": [
+        "numberedBookmarks.jumpToBookmark9"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "'",
+        "a"
+      ],
+      "commands": [
+        "numberedBookmarks.jumpToBookmarkA"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "'",
+        "b"
+      ],
+      "commands": [
+        "numberedBookmarks.jumpToBookmarkB"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "'",
+        "c"
+      ],
+      "commands": [
+        "numberedBookmarks.jumpToBookmarkC"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "'",
+        "d"
+      ],
+      "commands": [
+        "numberedBookmarks.jumpToBookmarkD"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "'",
+        "e"
+      ],
+      "commands": [
+        "numberedBookmarks.jumpToBookmarkE"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "'",
+        "f"
+      ],
+      "commands": [
+        "numberedBookmarks.jumpToBookmarkF"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "'",
+        "g"
+      ],
+      "commands": [
+        "numberedBookmarks.jumpToBookmarkG"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "'",
+        "h"
+      ],
+      "commands": [
+        "numberedBookmarks.jumpToBookmarkH"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "'",
+        "i"
+      ],
+      "commands": [
+        "numberedBookmarks.jumpToBookmarkI"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "'",
+        "j"
+      ],
+      "commands": [
+        "numberedBookmarks.jumpToBookmarkJ"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "'",
+        "k"
+      ],
+      "commands": [
+        "numberedBookmarks.jumpToBookmarkK"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "'",
+        "l"
+      ],
+      "commands": [
+        "numberedBookmarks.jumpToBookmarkL"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "'",
+        "m"
+      ],
+      "commands": [
+        "numberedBookmarks.jumpToBookmarkM"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "'",
+        "n"
+      ],
+      "commands": [
+        "numberedBookmarks.jumpToBookmarkN"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "'",
+        "o"
+      ],
+      "commands": [
+        "numberedBookmarks.jumpToBookmarkO"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "'",
+        "p"
+      ],
+      "commands": [
+        "numberedBookmarks.jumpToBookmarkP"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "'",
+        "q"
+      ],
+      "commands": [
+        "numberedBookmarks.jumpToBookmarkQ"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "'",
+        "r"
+      ],
+      "commands": [
+        "numberedBookmarks.jumpToBookmarkR"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "'",
+        "s"
+      ],
+      "commands": [
+        "numberedBookmarks.jumpToBookmarkS"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "'",
+        "t"
+      ],
+      "commands": [
+        "numberedBookmarks.jumpToBookmarkT"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "'",
+        "u"
+      ],
+      "commands": [
+        "numberedBookmarks.jumpToBookmarkU"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "'",
+        "v"
+      ],
+      "commands": [
+        "numberedBookmarks.jumpToBookmarkV"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "'",
+        "w"
+      ],
+      "commands": [
+        "numberedBookmarks.jumpToBookmarkW"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "'",
+        "x"
+      ],
+      "commands": [
+        "numberedBookmarks.jumpToBookmarkX"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "'",
+        "y"
+      ],
+      "commands": [
+        "numberedBookmarks.jumpToBookmarkY"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "'",
+        "z"
+      ],
+      "commands": [
+        "numberedBookmarks.jumpToBookmarkZ"
+      ],
+      "silent": true
+    },
     {
       "before": [
         "s"
@@ -385,6 +1106,13 @@
           "command": "git.unstageAll"
         }
       ]
+    },
+    {
+      "key": "m",
+      "name": "+Marks",
+      "icon": "bookmark",
+      "type": "command",
+      "command": "numberedBookmarks.listFromAllFiles"
     },
     {
       "key": "t",
