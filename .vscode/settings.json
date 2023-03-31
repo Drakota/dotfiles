@@ -892,6 +892,31 @@
         "workbench.action.minimizeOtherEditors"
       ],
       "silent": true
+    },
+    {
+      "before": [
+        "u"
+      ],
+      "commands": [
+        "undo"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "<C-r>"
+      ],
+      "commands": [
+        "redo"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "g",
+        "h"
+      ],
+      "after": []
     }
   ],
   "extensions.experimental.affinity": {
