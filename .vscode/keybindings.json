@@ -53,6 +53,33 @@
     "command": "workbench.action.navigateDown"
   },
   // #endregion
+  // #region Widget navigation mappings
+  {
+    "key": "ctrl+k",
+    "command": "search.action.focusSearchFromResults",
+    "when": "listFocus && searchViewletVisible"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "search.focus.previousInputBox",
+    "when": "inSearchEditor && inputBoxFocus || inputBoxFocus && searchViewletVisible"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "search.focus.nextInputBox",
+    "when": "inSearchEditor && inputBoxFocus || inputBoxFocus && searchViewletVisible"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "widgetNavigation.focusPrevious",
+    "when": "inputFocus && navigableContainerFocused || navigableContainerFocused && !listFocus || navigableContainerFocused && listScrollAtBoundary == 'both' || navigableContainerFocused && listScrollAtBoundary == 'top'"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "widgetNavigation.focusNext",
+    "when": "inputFocus && navigableContainerFocused || navigableContainerFocused && !listFocus || navigableContainerFocused && listScrollAtBoundary == 'both' || navigableContainerFocused && listScrollAtBoundary == 'bottom'"
+  },
+  // #endregion
   // #region Focus movement mappings
   {
     "key": "h",
@@ -206,7 +233,7 @@
   {
     "key": "ctrl+w z",
     "command": "workbench.action.toggleMaximizedPanel",
-    "when": "terminalFocus"
+    "when": "panelFocus"
   },
   // #endregion
   // #region List navigation mappings
@@ -377,6 +404,10 @@
     "key": "ctrl+shift+9",
     "command": "-numberedBookmarks.toggleBookmark9",
     "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "-workbench.action.togglePanel"
   }
   // #endregion
 ]

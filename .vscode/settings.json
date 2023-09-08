@@ -18,6 +18,8 @@
   "window.menuBarVisibility": "toggle",
   "window.confirmBeforeClose": "keyboardOnly",
   "window.commandCenter": true,
+  "breadcrumbs.filePath": "off",
+  "breadcrumbs.symbolPath": "on",
   "zenMode.fullScreen": false,
   "editor.suggestSelection": "first",
   "editor.fontLigatures": true,
@@ -1140,6 +1142,13 @@
       "command": "numberedBookmarks.listFromAllFiles"
     },
     {
+      "key": "s",
+      "name": "+Search",
+      "icon": "search",
+      "type": "command",
+      "command": "workbench.action.experimental.quickTextSearch"
+    },
+    {
       "key": "t",
       "name": "+Tasks",
       "icon": "tasklist",
@@ -1212,6 +1221,12 @@
           "name": "Markdown: Open Preview to the Side",
           "type": "command",
           "command": "markdown.showPreviewToSide"
+        },
+        {
+          "key": "c",
+          "name": "Chat: Open editor (GitHub Copilot)",
+          "type": "command",
+          "command": "workbench.action.openChat.copilot"
         }
       ]
     },
