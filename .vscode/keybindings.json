@@ -232,6 +232,11 @@
   },
   {
     "key": "ctrl+w z",
+    "command": "workbench.action.toggleMaximizeEditorGroup",
+    "when": "!editorFocus"
+  },
+  {
+    "key": "ctrl+w z",
     "command": "workbench.action.toggleMaximizedPanel",
     "when": "panelFocus"
   },

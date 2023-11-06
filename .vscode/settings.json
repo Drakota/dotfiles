@@ -1,7 +1,7 @@
 {
-  "workbench.activityBar.visible": false,
+  "workbench.activityBar.location": "hidden",
   "workbench.list.automaticKeyboardNavigation": false,
-  "workbench.editor.showTabs": false,
+  "workbench.editor.showTabs": "single",
   "workbench.editor.limit.enabled": true,
   "workbench.editor.limit.value": 1,
   "workbench.editor.limit.perEditorGroup": true,
@@ -20,7 +20,7 @@
   "window.commandCenter": true,
   "breadcrumbs.filePath": "off",
   "breadcrumbs.symbolPath": "on",
-  "zenMode.fullScreen": false,
+  "debug.toolBarLocation": "commandCenter",
   "editor.suggestSelection": "first",
   "editor.fontLigatures": true,
   "editor.minimap.enabled": false,
@@ -45,6 +45,7 @@
     "workbench.action.focusStatusBar",
     "workbench.action.toggleAuxiliaryBar"
   ],
+  "zenMode.fullScreen": false,
   "diffEditor.renderSideBySide": false,
   "git.allowForcePush": true,
   "git.confirmForcePush": true,
@@ -71,7 +72,8 @@
   "vim.replaceWithRegister": true,
   "vim.handleKeys": {
     "<C-t>": false,
-    "<C-b>": false
+    "<C-b>": false,
+    "<C-p>": false
   },
   "vim.normalModeKeyBindingsNonRecursive": [
     {
@@ -892,6 +894,16 @@
       ],
       "commands": [
         "workbench.action.minimizeOtherEditors"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "<C-w>",
+        "z"
+      ],
+      "commands": [
+        "workbench.action.toggleMaximizeEditorGroup"
       ],
       "silent": true
     },
