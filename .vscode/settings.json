@@ -1,10 +1,9 @@
 {
-  "workbench.activityBar.location": "hidden",
-  "workbench.list.automaticKeyboardNavigation": false,
   "workbench.editor.showTabs": "single",
   "workbench.editor.limit.enabled": true,
   "workbench.editor.limit.value": 1,
   "workbench.editor.limit.perEditorGroup": true,
+  "workbench.activityBar.location": "hidden",
   "workbench.editor.splitSizing": "split",
   "workbench.colorTheme": "GitHub Dark Default",
   "workbench.productIconTheme": "fluent-icons",
@@ -21,6 +20,8 @@
   "breadcrumbs.filePath": "off",
   "breadcrumbs.symbolPath": "on",
   "debug.toolBarLocation": "commandCenter",
+  "debug.showVariableTypes": true,
+  "debug.javascript.enableNetworkView": true,
   "editor.suggestSelection": "first",
   "editor.fontLigatures": true,
   "editor.minimap.enabled": false,
@@ -33,769 +34,34 @@
   "editor.inlineSuggest.enabled": true,
   "editor.suggest.matchOnWordStartOnly": false,
   "editor.scrollBeyondLastLine": false,
-  "editor.experimental.useCustomCodeActionMenu": true,
   "editor.inlayHints.padding": true,
-  "terminal.integrated.inheritEnv": true,
+  "editor.lineNumbers": "relative",
   "terminal.integrated.tabs.enabled": false,
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.shellIntegration.enabled": true,
-  "terminal.integrated.shellIntegration.showWelcome": false,
   "terminal.integrated.showExitAlert": false,
   "terminal.integrated.commandsToSkipShell": [
     "workbench.action.focusStatusBar",
     "workbench.action.toggleAuxiliaryBar"
   ],
   "zenMode.fullScreen": false,
-  "diffEditor.renderSideBySide": false,
+  "diffEditor.renderSideBySide": true,
   "git.allowForcePush": true,
   "git.confirmForcePush": true,
-  "settingsSync.ignoredExtensions": [
-    "shakram02.bash-beautify",
-    "dart-code.dart-code",
-    "dart-code.flutter",
-    "ms-python.python",
-    "ms-python.vscode-pylance",
-    "ms-toolsai.jupyter",
-    "github.remotehub",
-    "slevesque.shader",
-    "bradlc.vscode-tailwindcss",
-    "ms-dotnettools.csharp",
-    "mtxr.sqltools",
-    "dtsvet.vscode-wasm",
-    "juanblanco.solidity"
-  ],
-  "numberedBookmarks.navigateThroughAllFiles": "allowDuplicates",
+  "git.closeDiffOnOperation": true,
+  "chat.agent.enabled": true,
+  "github.copilot.chat.edits.temporalContext.enabled": true,
+  "github.copilot.chat.search.semanticTextResults": true,
   "vim.enableNeovim": true,
   "vim.neovimPath": "nvim",
   "vim.easymotion": true,
   "vim.useSystemClipboard": true,
   "vim.replaceWithRegister": true,
   "vim.handleKeys": {
-    "<C-t>": false,
     "<C-b>": false,
     "<C-p>": false
   },
   "vim.normalModeKeyBindingsNonRecursive": [
-    {
-      "before": [
-        "m",
-        "0"
-      ],
-      "commands": [
-        "numberedBookmarks.toggleBookmark0"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "m",
-        "1"
-      ],
-      "commands": [
-        "numberedBookmarks.toggleBookmark1"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "m",
-        "2"
-      ],
-      "commands": [
-        "numberedBookmarks.toggleBookmark2"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "m",
-        "3"
-      ],
-      "commands": [
-        "numberedBookmarks.toggleBookmark3"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "m",
-        "4"
-      ],
-      "commands": [
-        "numberedBookmarks.toggleBookmark4"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "m",
-        "5"
-      ],
-      "commands": [
-        "numberedBookmarks.toggleBookmark5"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "m",
-        "6"
-      ],
-      "commands": [
-        "numberedBookmarks.toggleBookmark6"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "m",
-        "7"
-      ],
-      "commands": [
-        "numberedBookmarks.toggleBookmark7"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "m",
-        "8"
-      ],
-      "commands": [
-        "numberedBookmarks.toggleBookmark8"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "m",
-        "9"
-      ],
-      "commands": [
-        "numberedBookmarks.toggleBookmark9"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "m",
-        "a"
-      ],
-      "commands": [
-        "numberedBookmarks.toggleBookmarkA"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "m",
-        "b"
-      ],
-      "commands": [
-        "numberedBookmarks.toggleBookmarkB"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "m",
-        "c"
-      ],
-      "commands": [
-        "numberedBookmarks.toggleBookmarkC"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "m",
-        "d"
-      ],
-      "commands": [
-        "numberedBookmarks.toggleBookmarkD"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "m",
-        "e"
-      ],
-      "commands": [
-        "numberedBookmarks.toggleBookmarkE"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "m",
-        "f"
-      ],
-      "commands": [
-        "numberedBookmarks.toggleBookmarkF"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "m",
-        "g"
-      ],
-      "commands": [
-        "numberedBookmarks.toggleBookmarkG"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "m",
-        "h"
-      ],
-      "commands": [
-        "numberedBookmarks.toggleBookmarkH"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "m",
-        "i"
-      ],
-      "commands": [
-        "numberedBookmarks.toggleBookmarkI"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "m",
-        "j"
-      ],
-      "commands": [
-        "numberedBookmarks.toggleBookmarkJ"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "m",
-        "k"
-      ],
-      "commands": [
-        "numberedBookmarks.toggleBookmarkK"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "m",
-        "l"
-      ],
-      "commands": [
-        "numberedBookmarks.toggleBookmarkL"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "m",
-        "m"
-      ],
-      "commands": [
-        "numberedBookmarks.toggleBookmarkM"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "m",
-        "n"
-      ],
-      "commands": [
-        "numberedBookmarks.toggleBookmarkN"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "m",
-        "o"
-      ],
-      "commands": [
-        "numberedBookmarks.toggleBookmarkO"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "m",
-        "p"
-      ],
-      "commands": [
-        "numberedBookmarks.toggleBookmarkP"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "m",
-        "q"
-      ],
-      "commands": [
-        "numberedBookmarks.toggleBookmarkQ"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "m",
-        "r"
-      ],
-      "commands": [
-        "numberedBookmarks.toggleBookmarkR"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "m",
-        "s"
-      ],
-      "commands": [
-        "numberedBookmarks.toggleBookmarkS"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "m",
-        "t"
-      ],
-      "commands": [
-        "numberedBookmarks.toggleBookmarkT"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "m",
-        "u"
-      ],
-      "commands": [
-        "numberedBookmarks.toggleBookmarkU"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "m",
-        "v"
-      ],
-      "commands": [
-        "numberedBookmarks.toggleBookmarkV"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "m",
-        "w"
-      ],
-      "commands": [
-        "numberedBookmarks.toggleBookmarkW"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "m",
-        "x"
-      ],
-      "commands": [
-        "numberedBookmarks.toggleBookmarkX"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "m",
-        "y"
-      ],
-      "commands": [
-        "numberedBookmarks.toggleBookmarkY"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "m",
-        "z"
-      ],
-      "commands": [
-        "numberedBookmarks.toggleBookmarkZ"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "'",
-        "0"
-      ],
-      "commands": [
-        "numberedBookmarks.jumpToBookmark0"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "'",
-        "1"
-      ],
-      "commands": [
-        "numberedBookmarks.jumpToBookmark1"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "'",
-        "2"
-      ],
-      "commands": [
-        "numberedBookmarks.jumpToBookmark2"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "'",
-        "3"
-      ],
-      "commands": [
-        "numberedBookmarks.jumpToBookmark3"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "'",
-        "4"
-      ],
-      "commands": [
-        "numberedBookmarks.jumpToBookmark4"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "'",
-        "5"
-      ],
-      "commands": [
-        "numberedBookmarks.jumpToBookmark5"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "'",
-        "6"
-      ],
-      "commands": [
-        "numberedBookmarks.jumpToBookmark6"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "'",
-        "7"
-      ],
-      "commands": [
-        "numberedBookmarks.jumpToBookmark7"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "'",
-        "8"
-      ],
-      "commands": [
-        "numberedBookmarks.jumpToBookmark8"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "'",
-        "9"
-      ],
-      "commands": [
-        "numberedBookmarks.jumpToBookmark9"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "'",
-        "a"
-      ],
-      "commands": [
-        "numberedBookmarks.jumpToBookmarkA"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "'",
-        "b"
-      ],
-      "commands": [
-        "numberedBookmarks.jumpToBookmarkB"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "'",
-        "c"
-      ],
-      "commands": [
-        "numberedBookmarks.jumpToBookmarkC"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "'",
-        "d"
-      ],
-      "commands": [
-        "numberedBookmarks.jumpToBookmarkD"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "'",
-        "e"
-      ],
-      "commands": [
-        "numberedBookmarks.jumpToBookmarkE"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "'",
-        "f"
-      ],
-      "commands": [
-        "numberedBookmarks.jumpToBookmarkF"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "'",
-        "g"
-      ],
-      "commands": [
-        "numberedBookmarks.jumpToBookmarkG"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "'",
-        "h"
-      ],
-      "commands": [
-        "numberedBookmarks.jumpToBookmarkH"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "'",
-        "i"
-      ],
-      "commands": [
-        "numberedBookmarks.jumpToBookmarkI"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "'",
-        "j"
-      ],
-      "commands": [
-        "numberedBookmarks.jumpToBookmarkJ"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "'",
-        "k"
-      ],
-      "commands": [
-        "numberedBookmarks.jumpToBookmarkK"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "'",
-        "l"
-      ],
-      "commands": [
-        "numberedBookmarks.jumpToBookmarkL"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "'",
-        "m"
-      ],
-      "commands": [
-        "numberedBookmarks.jumpToBookmarkM"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "'",
-        "n"
-      ],
-      "commands": [
-        "numberedBookmarks.jumpToBookmarkN"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "'",
-        "o"
-      ],
-      "commands": [
-        "numberedBookmarks.jumpToBookmarkO"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "'",
-        "p"
-      ],
-      "commands": [
-        "numberedBookmarks.jumpToBookmarkP"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "'",
-        "q"
-      ],
-      "commands": [
-        "numberedBookmarks.jumpToBookmarkQ"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "'",
-        "r"
-      ],
-      "commands": [
-        "numberedBookmarks.jumpToBookmarkR"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "'",
-        "s"
-      ],
-      "commands": [
-        "numberedBookmarks.jumpToBookmarkS"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "'",
-        "t"
-      ],
-      "commands": [
-        "numberedBookmarks.jumpToBookmarkT"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "'",
-        "u"
-      ],
-      "commands": [
-        "numberedBookmarks.jumpToBookmarkU"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "'",
-        "v"
-      ],
-      "commands": [
-        "numberedBookmarks.jumpToBookmarkV"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "'",
-        "w"
-      ],
-      "commands": [
-        "numberedBookmarks.jumpToBookmarkW"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "'",
-        "x"
-      ],
-      "commands": [
-        "numberedBookmarks.jumpToBookmarkX"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "'",
-        "y"
-      ],
-      "commands": [
-        "numberedBookmarks.jumpToBookmarkY"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "'",
-        "z"
-      ],
-      "commands": [
-        "numberedBookmarks.jumpToBookmarkZ"
-      ],
-      "silent": true
-    },
     {
       "before": [
         "s"
@@ -806,10 +72,31 @@
         "s"
       ]
     },
+    // Inspired by https://zed.dev/docs/vim
     {
       "before": [
         "g",
-        "H"
+        "y"
+      ],
+      "commands": [
+        "editor.action.goToTypeDefinition"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "c",
+        "d"
+      ],
+      "commands": [
+        "editor.action.rename"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "g",
+        "A"
       ],
       "commands": [
         "editor.action.referenceSearch.trigger"
@@ -819,10 +106,121 @@
     {
       "before": [
         "g",
-        "O"
+        "s"
       ],
       "commands": [
         "workbench.action.gotoSymbol"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "g",
+        "S"
+      ],
+      "commands": [
+        "workbench.action.showAllSymbols"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "g",
+        "]"
+      ],
+      "commands": [
+        "editor.action.marker.next"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "g",
+        "["
+      ],
+      "commands": [
+        "editor.action.marker.prev"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "g",
+        "."
+      ],
+      "commands": [
+        "editor.action.quickFix"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "]",
+        "c"
+      ],
+      "commands": [
+        "editor.action.dirtydiff.next"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "[",
+        "c"
+      ],
+      "commands": [
+        "editor.action.dirtydiff.previous"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "d",
+        "o"
+      ],
+      "commands": [
+        "git.openChange"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "d",
+        "u"
+      ],
+      "commands": [
+        "git.stageSelectedRanges"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "d",
+        "U"
+      ],
+      "commands": [
+        "git.unstageSelectedRanges"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "d",
+        "p"
+      ],
+      "commands": [
+        "git.revertSelectedRanges",
+        "closeQuickDiff"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "g",
+        "/"
+      ],
+      "commands": [
+        "search.action.openEditor"
       ],
       "silent": true
     },
@@ -933,419 +331,19 @@
       "after": []
     }
   ],
+  "vim.insertModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "<C-x>",
+        "<C-a>",
+      ],
+      "commands": [
+        "inlineChat.start"
+      ],
+      "silent": true
+    }
+  ],
   "extensions.experimental.affinity": {
     "vscodevim.vim": 1
-  },
-  "whichkey.bindings": [
-    {
-      "key": "?",
-      "name": "Search keybindings",
-      "icon": "keyboard",
-      "type": "command",
-      "command": "whichkey.searchBindings"
-    },
-    {
-      "key": "d",
-      "name": "+Debug",
-      "icon": "bug",
-      "type": "bindings",
-      "bindings": [
-        {
-          "key": "d",
-          "name": "Start debug",
-          "type": "command",
-          "command": "workbench.action.debug.start"
-        },
-        {
-          "key": "D",
-          "name": "Run without debugging",
-          "type": "command",
-          "command": "workbench.action.debug.run"
-        },
-        {
-          "key": "S",
-          "name": "Stop debug",
-          "type": "command",
-          "command": "workbench.action.debug.stop"
-        },
-        {
-          "key": "c",
-          "name": "Continue debug",
-          "type": "command",
-          "command": "workbench.action.debug.continue"
-        },
-        {
-          "key": "p",
-          "name": "Pause debug",
-          "type": "command",
-          "command": "workbench.action.debug.pause"
-        },
-        {
-          "key": "R",
-          "name": "Restart debug",
-          "type": "command",
-          "command": "workbench.action.debug.restart"
-        },
-        {
-          "key": "i",
-          "name": "Step into",
-          "type": "command",
-          "command": "workbench.action.debug.stepInto"
-        },
-        {
-          "key": "s",
-          "name": "Step over",
-          "type": "command",
-          "command": "workbench.action.debug.stepOver"
-        },
-        {
-          "key": "o",
-          "name": "Step out",
-          "type": "command",
-          "command": "workbench.action.debug.stepOut"
-        },
-        {
-          "key": "b",
-          "name": "Toggle breakpoint",
-          "type": "command",
-          "command": "editor.debug.action.toggleBreakpoint"
-        },
-        {
-          "key": "B",
-          "name": "Toggle inline breakpoint",
-          "type": "command",
-          "command": "editor.debug.action.toggleInlineBreakpoint"
-        },
-        {
-          "key": "j",
-          "name": "Jump to cursor",
-          "type": "command",
-          "command": "debug.jumpToCursor"
-        },
-        {
-          "key": "v",
-          "name": "REPL",
-          "type": "command",
-          "command": "workbench.debug.action.toggleRepl"
-        },
-        {
-          "key": "w",
-          "name": "Focus on watch window",
-          "type": "command",
-          "command": "workbench.debug.action.focusWatchView"
-        },
-        {
-          "key": "W",
-          "name": "Add to watch",
-          "type": "command",
-          "command": "editor.debug.action.selectionToWatch"
-        }
-      ]
-    },
-    {
-      "key": "g",
-      "name": "+Git",
-      "icon": "git-branch",
-      "type": "bindings",
-      "bindings": [
-        {
-          "key": "a",
-          "name": "Amend",
-          "type": "command",
-          "command": "git.commitStagedAmend"
-        },
-        {
-          "key": "b",
-          "name": "Checkout",
-          "type": "command",
-          "command": "git.checkout"
-        },
-        {
-          "key": "c",
-          "name": "Commit",
-          "type": "command",
-          "command": "git.commit"
-        },
-        {
-          "key": "d",
-          "name": "Discard changes",
-          "type": "command",
-          "command": "git.clean"
-        },
-        {
-          "key": "D",
-          "name": "Discard all changes",
-          "type": "command",
-          "command": "git.cleanAll"
-        },
-        {
-          "key": "f",
-          "name": "Fetch",
-          "type": "command",
-          "command": "git.fetch"
-        },
-        {
-          "key": "g",
-          "name": "GitLens: Graph",
-          "type": "command",
-          "command": "gitlens.showGraphPage"
-        },
-        {
-          "key": "i",
-          "name": "Init",
-          "type": "command",
-          "command": "git.init"
-        },
-        {
-          "key": "m",
-          "name": "Merge",
-          "type": "command",
-          "command": "git.merge"
-        },
-        {
-          "key": "p",
-          "name": "Publish",
-          "type": "command",
-          "command": "git.publish"
-        },
-        {
-          "key": "P",
-          "name": "Push (Force)",
-          "type": "command",
-          "command": "git.pushForce"
-        },
-        {
-          "key": "s",
-          "name": "Stage",
-          "type": "command",
-          "command": "git.stage"
-        },
-        {
-          "key": "S",
-          "name": "Stage all",
-          "type": "command",
-          "command": "git.stageAll"
-        },
-        {
-          "key": "t",
-          "name": "Status",
-          "type": "command",
-          "command": "workbench.view.scm"
-        },
-        {
-          "key": "u",
-          "name": "Unstage",
-          "type": "command",
-          "command": "git.unstage"
-        },
-        {
-          "key": "U",
-          "name": "Unstage all",
-          "type": "command",
-          "command": "git.unstageAll"
-        }
-      ]
-    },
-    {
-      "key": "m",
-      "name": "+Marks",
-      "icon": "bookmark",
-      "type": "command",
-      "command": "numberedBookmarks.listFromAllFiles"
-    },
-    {
-      "key": "s",
-      "name": "+Search",
-      "icon": "search",
-      "type": "command",
-      "command": "workbench.action.experimental.quickTextSearch"
-    },
-    {
-      "key": "t",
-      "name": "+Tasks",
-      "icon": "tasklist",
-      "type": "bindings",
-      "bindings": [
-        {
-          "key": ".",
-          "name": "Rerun last task",
-          "type": "command",
-          "command": "workbench.action.tasks.reRunTask"
-        },
-        {
-          "key": ":",
-          "name": "Run task",
-          "type": "command",
-          "command": "workbench.action.tasks.runTask"
-        },
-        {
-          "key": "b",
-          "name": "Run build tasks",
-          "type": "command",
-          "command": "workbench.action.tasks.build"
-        },
-        {
-          "key": "c",
-          "name": "Configure task runner",
-          "type": "command",
-          "command": "workbench.action.tasks.configureTaskRunner"
-        },
-        {
-          "key": "g",
-          "name": "Show running tasks",
-          "type": "command",
-          "command": "workbench.action.tasks.showTasks"
-        },
-        {
-          "key": "l",
-          "name": "Show task log",
-          "type": "command",
-          "command": "workbench.action.tasks.showLog"
-        },
-        {
-          "key": "t",
-          "name": "Run test task",
-          "type": "command",
-          "command": "workbench.action.tasks.test"
-        },
-        {
-          "key": "x",
-          "name": "Terminate task",
-          "type": "command",
-          "command": "workbench.action.tasks.terminate"
-        },
-        {
-          "key": "R",
-          "name": "Restart running task",
-          "type": "command",
-          "command": "workbench.action.tasks.restartTask"
-        }
-      ]
-    },
-    {
-      "key": "w",
-      "name": "+Window",
-      "icon": "window",
-      "type": "bindings",
-      "bindings": [
-        {
-          "key": "m",
-          "name": "Markdown: Open Preview to the Side",
-          "type": "command",
-          "command": "markdown.showPreviewToSide"
-        },
-        {
-          "key": "c",
-          "name": "Chat: Open editor (GitHub Copilot)",
-          "type": "command",
-          "command": "workbench.action.openChat.copilot"
-        }
-      ]
-    },
-    {
-      "key": "x",
-      "name": "+Text",
-      "icon": "repl",
-      "type": "bindings",
-      "bindings": [
-        {
-          "key": "i",
-          "name": "Organize imports",
-          "type": "command",
-          "command": "editor.action.organizeImports"
-        },
-        {
-          "key": "r",
-          "name": "Rename symbol",
-          "type": "command",
-          "command": "editor.action.rename"
-        },
-        {
-          "key": "R",
-          "name": "Refactor",
-          "type": "command",
-          "command": "editor.action.refactor"
-        },
-        {
-          "key": ".",
-          "name": "Quick fix",
-          "type": "command",
-          "command": "editor.action.quickFix"
-        },
-        {
-          "key": "a",
-          "name": "Find all references",
-          "type": "command",
-          "command": "editor.action.referenceSearch.trigger"
-        },
-        {
-          "key": "m",
-          "name": "+Merge conflict",
-          "type": "bindings",
-          "bindings": [
-            {
-              "key": "b",
-              "name": "Accept both",
-              "type": "command",
-              "command": "merge-conflict.accept.both"
-            },
-            {
-              "key": "c",
-              "name": "Accept current",
-              "type": "command",
-              "command": "merge-conflict.accept.current"
-            },
-            {
-              "key": "i",
-              "name": "Accept incoming",
-              "type": "command",
-              "command": "merge-conflict.accept.incoming"
-            },
-            {
-              "key": "B",
-              "name": "Accept all both",
-              "type": "command",
-              "command": "merge-conflict.accept.all-both"
-            },
-            {
-              "key": "C",
-              "name": "Accept all current",
-              "type": "command",
-              "command": "merge-conflict.accept.all-current"
-            },
-            {
-              "key": "I",
-              "name": "Accept all incoming",
-              "type": "command",
-              "command": "merge-conflict.accept.all-incoming"
-            },
-            {
-              "key": "s",
-              "name": "Accept selection",
-              "type": "command",
-              "command": "merge-conflict.accept.selection"
-            },
-            {
-              "key": "k",
-              "name": "Compare current conflict",
-              "type": "command",
-              "command": "merge-conflict.compare"
-            },
-            {
-              "key": "n",
-              "name": "Next Conflict",
-              "type": "command",
-              "command": "merge-conflict.next"
-            },
-            {
-              "key": "N",
-              "name": "Previous Conflict",
-              "type": "command",
-              "command": "merge-conflict.previous"
-            }
-          ]
-        }
-      ]
-    }
-  ]
+  }
 }
