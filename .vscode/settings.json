@@ -36,6 +36,8 @@
   "editor.scrollBeyondLastLine": false,
   "editor.inlayHints.padding": true,
   "editor.lineNumbers": "relative",
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
   "terminal.integrated.tabs.enabled": false,
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.shellIntegration.enabled": true,
@@ -50,13 +52,19 @@
   "git.confirmForcePush": true,
   "git.closeDiffOnOperation": true,
   "chat.agent.enabled": true,
+  "chat.implicitContext.enabled": {
+    "panel": "never",
+    "editing-session": "never"
+  },
   "github.copilot.chat.edits.temporalContext.enabled": true,
   "github.copilot.chat.search.semanticTextResults": true,
+  "github.copilot.nextEditSuggestions.enabled": true,
   "vim.enableNeovim": true,
   "vim.neovimPath": "nvim",
   "vim.easymotion": true,
   "vim.useSystemClipboard": true,
   "vim.replaceWithRegister": true,
+  "vim.leader": "<space>",
   "vim.handleKeys": {
     "<C-b>": false,
     "<C-p>": false
@@ -71,6 +79,16 @@
         "<leader>",
         "s"
       ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "c",
+        "c"
+      ],
+      "commands": [
+        "workbench.action.chat.openInEditor"
+      ],
     },
     // Inspired by https://zed.dev/docs/vim
     {
@@ -342,6 +360,24 @@
       ],
       "silent": true
     }
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": [
+        ">"
+      ],
+      "commands": [
+        "editor.action.indentLines"
+      ]
+    },
+    {
+      "before": [
+        "<"
+      ],
+      "commands": [
+        "editor.action.outdentLines"
+      ]
+    },
   ],
   "extensions.experimental.affinity": {
     "vscodevim.vim": 1

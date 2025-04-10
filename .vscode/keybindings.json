@@ -5,6 +5,11 @@
     "command": "closeQuickDiff",
     "when": "dirtyDiffVisible && vim.mode == 'Normal'"
   },
+  {
+    "key": "tab",
+    "command": "editor.action.inlineSuggest.acceptNextInlineEditPart",
+    "when": "cursorAtInlineEdit && vim.mode == 'Normal'"
+  },
   // #endregion
   // #region Layout mappings
   {
