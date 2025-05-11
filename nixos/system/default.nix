@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -11,6 +11,9 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html)
   system.stateVersion = "25.05";
+
+  # Set the kernel version to use
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Bootloader configuration
   boot.loader.systemd-boot.enable = true;
@@ -42,6 +45,9 @@
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
   services.desktopManager.plasma6.enable = true;
+
+  # Enable Ozone support for Wayland
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # Configure the keyboard layout in X11
   services.xserver.xkb = {

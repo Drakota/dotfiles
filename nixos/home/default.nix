@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, ... }:
 let
   tmuxConfPath = "${config.home.homeDirectory}/dotfiles/.tmux.conf";
 in
@@ -11,20 +11,6 @@ in
   # User configuration
   home.username = "drakota";
   home.homeDirectory = "/home/drakota";
-
-  # Common packages to install
-  home.packages = with pkgs; [
-    vim
-    wget
-    spotify
-    vscode
-    microsoft-edge
-    neofetch
-    nixfmt-rfc-style
-    discord
-    gitkraken
-    tmux
-  ];
 
   # Handle dotfiles
   home.file = {

@@ -18,16 +18,17 @@
     }:
 
     {
-      # Nix experimental features
-      nix.settings.experimental-features = [
-        "nix-command"
-        "flakes"
-      ];
-
       nixosConfigurations.nzxt = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
+          {
+            # Nix experimental features
+            nix.settings.experimental-features = [
+              "nix-command"
+              "flakes"
+            ];
+          }
           ./hardware-configuration.nix
           ./system/default.nix
           home-manager.nixosModules.home-manager

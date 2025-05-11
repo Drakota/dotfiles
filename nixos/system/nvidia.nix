@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, ... }:
 
 {
   # Enable the NVIDIA kernel modules
@@ -14,13 +14,9 @@
   ];
 
   # Set the NVIDIA kernel module options
-  boot.extraModprobeConfig = ''
-    options nvidia NVreg_PreserveVideoMemoryAllocations=1
-    options nvidia NVreg_TemporaryFilePath=/var/tmp
-    options nvidia NVreg_EnableGpuFirmware=0
-    options nvidia_drm modeset=1
-    options nvidia_drm fbdev=1
-  '';
+  boot.kernelParams = [
+    "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
+  ];
 
   # Enable OpenGL
   hardware.graphics.enable = true;
@@ -40,7 +36,7 @@
     powerManagement.finegrained = false;
 
     # Use the NVIDIA open source kernel module
-    open = true;
+    open = false;
 
     # Enable the NVIDIA settings daemon
     nvidiaSettings = true;
