@@ -89,7 +89,7 @@
       ],
       "commands": [
         "workbench.action.chat.openInEditor"
-      ],
+      ]
     },
     // Inspired by https://zed.dev/docs/vim
     {
@@ -354,7 +354,7 @@
     {
       "before": [
         "<C-x>",
-        "<C-a>",
+        "<C-a>"
       ],
       "commands": [
         "inlineChat.start"
@@ -378,7 +378,7 @@
       "commands": [
         "editor.action.outdentLines"
       ]
-    },
+    }
   ],
   "extensions.experimental.affinity": {
     "vscodevim.vim": 1
