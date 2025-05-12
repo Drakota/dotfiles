@@ -7,6 +7,8 @@
     # Home Manager
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    # Nyxpkgs Unstable
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
   };
 
   outputs =
@@ -14,6 +16,7 @@
       self,
       nixpkgs,
       home-manager,
+      chaotic,
       ...
     }:
 
@@ -32,6 +35,7 @@
           ./hardware-configuration.nix
           ./system/default.nix
           home-manager.nixosModules.home-manager
+          chaotic.nixosModules.default
           {
             # Enable the Home Manager module
             home-manager.useGlobalPkgs = true;

@@ -13,7 +13,7 @@
   system.stateVersion = "25.05";
 
   # Set the kernel version to use
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_cachyos-lto;
 
   # Bootloader configuration
   boot.loader.systemd-boot.enable = true;
@@ -45,6 +45,9 @@
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
   services.desktopManager.plasma6.enable = true;
+  environment.systemPackages = with pkgs; [
+    kde-rounded-corners
+  ];
 
   # Enable Ozone support for Wayland
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
