@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 PYTHON3_PATH=$(which python3)
 PIP3_VERSION=$($PYTHON3_PATH -m pip --version 2>&1)
