@@ -18,5 +18,7 @@
     discord
     gitkraken
     tmux
+    nvtopPackages.nvidia
+    htop
   ];
 }

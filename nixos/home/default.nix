@@ -1,6 +1,6 @@
 { config, ... }:
 let
-  tmuxConfPath = ../../../.tmux.conf;
+  tmuxConfPath = "${config.home.homeDirectory}/dotfiles/.tmux.conf";
 in
 {
   imports = [

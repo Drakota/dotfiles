@@ -1,0 +1,15 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Rebuild NixOS with Home Manager override",
+      "type": "shell",
+      "command": "nixos-rebuild test --override-input home-manager path:/home/drakota/Projects/home-manager --show-trace",
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}

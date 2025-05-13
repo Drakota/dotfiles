@@ -13,7 +13,7 @@
   system.stateVersion = "25.05";
 
   # Set the kernel version to use
-  boot.kernelPackages = pkgs.linuxPackages_cachyos-lto;
+  boot.kernelPackages = pkgs.linuxPackages_cachyos;
 
   # Bootloader configuration
   boot.loader.systemd-boot.enable = true;
