@@ -14,6 +14,7 @@
     microsoft-edge
     neofetch
     nixfmt-rfc-style
+    nixd
     discord
     gitkraken
     tmux

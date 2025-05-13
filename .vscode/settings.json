@@ -57,9 +57,13 @@
     "panel": "never",
     "editing-session": "never"
   },
+  "nix.enableLanguageServer": true,
+  "nix.serverPath": "nixd",
   "github.copilot.chat.edits.temporalContext.enabled": true,
   "github.copilot.chat.search.semanticTextResults": true,
   "github.copilot.nextEditSuggestions.enabled": true,
+  "inlineChat.enableV2": true,
+  "inlineChat.hideOnRequest": true,
   "vim.enableNeovim": true,
   "vim.neovimPath": "nvim",
   "vim.easymotion": true,
