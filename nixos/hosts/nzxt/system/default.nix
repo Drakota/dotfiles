@@ -38,9 +38,6 @@
   # Set the default locale
   i18n.defaultLocale = "en_CA.UTF-8";
 
-  # Enable the X11 windowing system
-  services.xserver.enable = true;
-
   # Enable the KDE Plasma 6 desktop environment
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;

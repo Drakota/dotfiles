@@ -4,7 +4,7 @@ let
 in
 {
   imports = [
-    ./programs/default.nix
+    ./programs
     ./fonts.nix
   ];
 

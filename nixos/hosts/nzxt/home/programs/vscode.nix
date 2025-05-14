@@ -8,7 +8,7 @@ in
 {
   programs.vscode = {
     enable = true;
-    package = pkgs.vscode.overrideAttrs (old: rec {
+    package = pkgs.vscode.overrideAttrs (oldAttrs: rec {
       version = "1.100.0";
       src = pkgs.fetchurl {
         name = "VSCode_${version}_linux-x64.tar.gz";

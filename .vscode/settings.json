@@ -58,8 +58,6 @@
     "panel": "never",
     "editing-session": "never"
   },
-  "nix.enableLanguageServer": true,
-  "nix.serverPath": "nixd",
   "github.copilot.chat.edits.temporalContext.enabled": true,
   "github.copilot.chat.search.semanticTextResults": true,
   "github.copilot.nextEditSuggestions.enabled": true,
@@ -387,5 +385,16 @@
   ],
   "extensions.experimental.affinity": {
     "vscodevim.vim": 1
+  },
+  "nix.serverPath": "nixd",
+  "nix.enableLanguageServer": true,
+  "nix.serverSettings": {
+    "nixd": {
+      "options": {
+        "nixos": {
+          "expr": "(builtins.getFlake \"${env:HOME}/dotfiles/nixos\").nixosConfigurations.nzxt.options",
+        },
+      }
+    }
   }
 }
