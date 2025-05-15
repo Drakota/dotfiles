@@ -20,5 +20,6 @@
     tmux
     nvtopPackages.nvidia
     htop
+    nvibrant_git
   ];
 }
