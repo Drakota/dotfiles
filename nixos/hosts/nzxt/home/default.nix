@@ -6,6 +6,7 @@ in
   imports = [
     ./programs
     ./fonts.nix
+    ./autostart.nix
   ];
 
   # User configuration
