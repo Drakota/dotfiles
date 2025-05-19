@@ -1,6 +1,7 @@
+{ pkgs, ... }:
+
 {
   # Program configuration that are not configured in the home-manager module
-
   programs.gamemode = {
     enable = true;
     enableRenice = true;
@@ -21,5 +22,8 @@
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true;
+    extraCompatPackages = with pkgs; [
+      proton-ge-bin
+    ];
   };
 }

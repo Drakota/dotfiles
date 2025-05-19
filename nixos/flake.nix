@@ -5,7 +5,7 @@
     # Nixpkgs Unstable
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     # Home Manager
-    home-manager.url = "github:Drakota/home-manager?ref=vscode_file_paths";
+    home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     # Nyxpkgs Unstable
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
