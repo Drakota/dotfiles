@@ -53,6 +53,7 @@
   "git.allowForcePush": true,
   "git.confirmForcePush": true,
   "git.closeDiffOnOperation": true,
+  "git.openRepositoryInParentFolders": "always",
   "chat.agent.enabled": true,
   "chat.implicitContext.enabled": {
     "panel": "never",
