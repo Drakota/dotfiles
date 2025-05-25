@@ -11,8 +11,8 @@
     vim
     wget
     spotify
-    microsoft-edge
-    neofetch
+    stable.microsoft-edge
+    fastfetch
     nixfmt-rfc-style
     nixd
     discord
@@ -21,5 +21,6 @@
     nvtopPackages.nvidia
     htop
     nvibrant_git
+    stremio
   ];
 }

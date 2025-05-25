@@ -1,5 +1,12 @@
 { pkgs, ... }:
-
+let
+  startscript = pkgs.writeShellScript "gamemode-start" ''
+    ${pkgs.nvidia_oc}/bin/nvidia_oc set --index 0 --freq-offset 100 --mem-offset 500
+  '';
+  endscript = pkgs.writeShellScript "gamemode-end" ''
+    ${pkgs.nvidia_oc}/bin/nvidia_oc set --index 0 --freq-offset 0 --mem-offset 0
+  '';
+in
 {
   # Program configuration that are not configured in the home-manager module
   programs.gamemode = {
@@ -9,14 +16,15 @@
       general = {
         renice = 10;
       };
-      gpu = {
-        apply_gpu_optimisations = "accept-responsibility";
-        gpu_device = 1;
-        nv_core_clock_mhz_offset = 150;
-        nv_mem_clock_mhz_offset = 400;
+      custom = {
+        start = "${startscript}";
+        end = "${endscript}";
       };
     };
   };
+  environment.systemPackages = with pkgs; [
+    nvidia_oc
+  ];
   users.users.drakota.extraGroups = [ "gamemode" ];
 
   programs.steam = {
