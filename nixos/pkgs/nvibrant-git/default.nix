@@ -16,7 +16,7 @@ python3Packages.buildPythonApplication rec {
     deepClone = true;
     leaveDotGit = true;
     fetchSubmodules = true;
-    hash = "sha256-ksG6VctwHelJ9u21qeHezZ3w1Q9ZqbuZVueV7osiDjg=";
+    hash = "sha256-8Ialul00SNn8u5+ZgU3dxR4gbBInN6OuT7gyUwT/ACk=";
   };
 
   nativeBuildInputs = [

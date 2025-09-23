@@ -6,6 +6,7 @@
     ./nvidia.nix
     ./openrazer.nix
     ./gc.nix
+    ./virtualization.nix
   ];
 
   # Before changing this value read the documentation for this option
@@ -13,7 +14,9 @@
   system.stateVersion = "25.05";
 
   # Set the kernel version to use
-  boot.kernelPackages = pkgs.linuxPackages_cachyos-lto;
+  # https://github.com/chaotic-cx/nyx/issues/1178
+  # boot.kernelPackages = pkgs.linuxPackages_cachyos-lto;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Bootloader configuration
   boot.loader.systemd-boot.enable = true;
