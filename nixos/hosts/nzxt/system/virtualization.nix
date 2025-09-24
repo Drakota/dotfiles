@@ -1,5 +1,21 @@
 { pkgs, ... }:
 
+let
+  kaliImage = pkgs.stdenv.mkDerivation {
+    name = "kali-vm-image";
+    src = pkgs.fetchurl {
+      url = "https://mirror.xenyth.net/kali-images/kali-2025.2/kali-linux-2025.2-qemu-amd64.7z";
+      sha256 = "1lyn8xx65i1vcjf5rmwwrq8pdvmhxpm5yynr6ikiq58xq4mv902j";
+    };
+    nativeBuildInputs = [ pkgs.p7zip ];
+    unpackPhase = "true";
+    installPhase = ''
+      mkdir -p $out
+      7z e $src -o$out
+      mv $out/kali-linux-2025.2-qemu-amd64.qcow2 $out/kali-vm.qcow2
+    '';
+  };
+in
 {
   # Enable the virtualization daemon
   virtualisation.libvirtd.enable = true;
@@ -32,39 +48,31 @@
       # Create VM if it does not exist
       if ! ${pkgs.libvirt}/bin/virsh list --all | grep -q "kali-vm"; then
         # Ensure the default network is active
-        if ! ${pkgs.libvirt}/bin/virsh net-list --all | grep -q "default.*active"; then
+        if ! ${pkgs.libvirt}/bin/virsh net-info default | grep -q "Active:[[:space:]]*yes"; then
           echo "Starting default network..."
           ${pkgs.libvirt}/bin/virsh net-start default
         fi
 
         # Ensure images directory exists
         mkdir -p /var/lib/libvirt/images
-        # Download and extract Kali Linux image if not already present
-        KALI_7Z="/var/lib/libvirt/images/kali-vm.7z"
-        KALI_IMG="/var/lib/libvirt/images/kali-vm.qcow2"
-        if [ ! -f "$KALI_IMG" ]; then
-          echo "Downloading Kali Linux image..."
-          ${pkgs.curl}/bin/curl -L -o "$KALI_7Z" "https://mirror.xenyth.net/kali-images/kali-2025.2/kali-linux-2025.2-qemu-amd64.7z"
-          echo "Extracting Kali Linux image..."
-          ${pkgs.p7zip}/bin/7z e "$KALI_7Z" -o/var/lib/libvirt/images
-          # Rename extracted file if needed
-          if [ -f "/var/lib/libvirt/images/kali-linux-2025.2-qemu-amd64.qcow2" ] && [ "/var/lib/libvirt/images/kali-linux-2025.2-qemu-amd64.qcow2" != "$KALI_IMG" ]; then
-            mv "/var/lib/libvirt/images/kali-linux-2025.2-qemu-amd64.qcow2" "$KALI_IMG"
-          fi
-        fi
+
+        # Copy image if not already present
+        cp -n ${kaliImage}/kali-vm.qcow2 /var/lib/libvirt/images/kali-vm.qcow2
 
         echo "Creating Kali VM..."
         ${pkgs.virt-manager}/bin/virt-install \
           --name kali-vm \
           --ram 8192 \
           --vcpus 8 \
-          --disk path=$KALI_IMG,format=qcow2 \
+          --disk path=/var/lib/libvirt/images/kali-vm.qcow2,format=qcow2 \
           --import \
           --os-variant debian10 \
           --graphics spice \
           --video virtio \
           --channel spicevmc \
           --noautoconsole
+      else
+        echo "Kali VM already exists. Skipping creation."
       fi
     '';
   };
